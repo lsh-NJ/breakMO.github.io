@@ -1,5 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Mon, 05 May 2025 02:07:00 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>再观补码与数据极限</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/zai-guan-bu-ma-yu-shu-ju-ji-xian.html</link><description>## 求补码的方法：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Mon, 05 May 2025 09:20:11 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>循环移位操作下排列中固定点的问题（真的吃力😓）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/xun-huan-yi-wei-cao-zuo-xia-pai-lie-zhong-gu-ding-dian-de-wen-ti-%EF%BC%88-zhen-de-chi-li-%F0%9F%98%93%EF%BC%89.html</link><description>## 模运算：
+
+* ### 定义
+
+  a除以b的余数定义为a mod b
+
+  满足交换律、结合律还有分配律
+
+## 排列与组合
+
+* ### 排列：
+
+  从n个不同元素中取出 m（m &lt;= n）个元素，**&lt;u&gt;按照一定的顺序排成一列&lt;/u&gt;**，叫做从n个不同元素中取出m个元素的一个排列。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/xun-huan-yi-wei-cao-zuo-xia-pai-lie-zhong-gu-ding-dian-de-wen-ti-%EF%BC%88-zhen-de-chi-li-%F0%9F%98%93%EF%BC%89.html</guid><pubDate>Mon, 05 May 2025 09:19:45 +0000</pubDate></item><item><title>再观补码与数据极限</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/zai-guan-bu-ma-yu-shu-ju-ji-xian.html</link><description>## 求补码的方法：
 
 * **正数**：正数的原码、反码和补码都相同，符号位始终为 0 不变。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/zai-guan-bu-ma-yu-shu-ju-ji-xian.html</guid><pubDate>Mon, 05 May 2025 02:06:36 +0000</pubDate></item><item><title>2025/5/4周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-5-4-zhou-ji.html</link><description>周日这天搭建了自己的博客，希望有一天可以自己为博客写一个UI系统，自己的设计也太酷了吧！
 
