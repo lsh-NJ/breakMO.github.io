@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Wed, 07 May 2025 08:05:30 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>一种有趣的答案输出格式化代码</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/yi-zhong-you-qu-de-da-an-shu-chu-ge-shi-hua-dai-ma.html</link><description>## 代码：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Wed, 07 May 2025 08:18:37 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>证伪偶数全排列无法实现ai mod i = i - 1</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/zheng-wei-ou-shu-quan-pai-lie-wu-fa-shi-xian-ai%20mod%20i%20%3D%20i%20-%201.html</link><description>## 题目大意：
+
+&gt; 给定1~n个数，要求对其进行重新排列为数组a满足`a[i] % i = i - 1`
+
+## 证明n为偶数不可能有满足条件的数组：
+
+* 设最大的偶数为n，n不能放在`a[n]` `a[1]` `a[2]`处（思路：通过假设试图寻找通式，奇偶性肯定是要讨论的问题，然后通过左右边界来探索问题）
+* n只能放在3~n-1处，那么不能放n的位置就要放两个偶数，显然2是偶数，n也是偶数，偶数与偶数的余不可能是奇数，不符合条件。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/zheng-wei-ou-shu-quan-pai-lie-wu-fa-shi-xian-ai%20mod%20i%20%3D%20i%20-%201.html</guid><pubDate>Wed, 07 May 2025 08:18:11 +0000</pubDate></item><item><title>一种有趣的答案输出格式化代码</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/yi-zhong-you-qu-de-da-an-shu-chu-ge-shi-hua-dai-ma.html</link><description>## 代码：
 
 ```cpp
 for(int i = 0; i &lt; n; i++) {
