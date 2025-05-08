@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://i2.hdslb.com/bfs/new_dyn/5a54172354350d85438672309fff9b222098801251.jpg@1192w.avif</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Wed, 07 May 2025 09:42:32 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>证伪偶数全排列无法实现ai mod i = i - 1</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/zheng-wei-ou-shu-quan-pai-lie-wu-fa-shi-xian-ai%20mod%20i%20%3D%20i%20-%201.html</link><description>## 题目大意：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://i2.hdslb.com/bfs/new_dyn/5a54172354350d85438672309fff9b222098801251.jpg@1192w.avif</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Thu, 08 May 2025 10:14:59 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>最大子数组和及其构造变式（有趣）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/zui-da-zi-shu-zu-he-ji-qi-gou-zao-bian-shi-%EF%BC%88-you-qu-%EF%BC%89.html</link><description>## 复习最大数组和：
+
+1. ### 贪心做法：
+
+    * #### 思路：
+
+      &gt; 遍历的过程中不断维护一个区间和，如果区间和小于零就到达该区间的结束，使和变为0即重新维护一个新的区间，在维护的过程中不断检查区间和的最大值，这样就可以得到最大的那个区间的区间和。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/zui-da-zi-shu-zu-he-ji-qi-gou-zao-bian-shi-%EF%BC%88-you-qu-%EF%BC%89.html</guid><pubDate>Thu, 08 May 2025 10:14:34 +0000</pubDate></item><item><title>证伪偶数全排列无法实现ai mod i = i - 1</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/zheng-wei-ou-shu-quan-pai-lie-wu-fa-shi-xian-ai%20mod%20i%20%3D%20i%20-%201.html</link><description>## 题目大意：
 
 &gt; 给定1~n个数，要求对其进行重新排列为数组a满足`a[i] % i = i - 1`
 
