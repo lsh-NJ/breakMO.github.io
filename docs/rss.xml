@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://i2.hdslb.com/bfs/new_dyn/5a54172354350d85438672309fff9b222098801251.jpg@1192w.avif</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Thu, 08 May 2025 10:14:59 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>最大子数组和及其构造变式（有趣）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/zui-da-zi-shu-zu-he-ji-qi-gou-zao-bian-shi-%EF%BC%88-you-qu-%EF%BC%89.html</link><description>## 复习最大数组和：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://i2.hdslb.com/bfs/new_dyn/5a54172354350d85438672309fff9b222098801251.jpg@1192w.avif</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 09 May 2025 01:27:04 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>dijkstra（堆优化版）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/dijkstra%EF%BC%88-dui-you-hua-ban-%EF%BC%89.html</link><description>## 图的表示方式：
+
+1. ### 邻接矩阵
+
+    * #### 优点：
+
+      * 检查任意两个顶点间是否存在边的操作非常快
+      * 适合稠密图，在边数接近顶点数平方的图中，邻接矩阵是一种空间效率较高的表示方法。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/dijkstra%EF%BC%88-dui-you-hua-ban-%EF%BC%89.html</guid><pubDate>Fri, 09 May 2025 01:26:38 +0000</pubDate></item><item><title>最大子数组和及其构造变式（有趣）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/zui-da-zi-shu-zu-he-ji-qi-gou-zao-bian-shi-%EF%BC%88-you-qu-%EF%BC%89.html</link><description>## 复习最大数组和：
 
 1. ### 贪心做法：
 
