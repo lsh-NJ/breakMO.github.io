@@ -1,5 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Sun, 11 May 2025 16:22:55 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>2025/5/11周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-5-11-zhou-ji.html</link><description>一切都是缘分吗？所谓命运的馈赠。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/2025-5-11-zhou-ji.html</guid><pubDate>Sun, 11 May 2025 08:17:23 +0000</pubDate></item><item><title>C++的Lambda表达式（隐函数）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/C%2B%2B-de-Lambda-biao-da-shi-%EF%BC%88-yin-han-shu-%EF%BC%89.html</link><description>1. #### 基本结构：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Mon, 12 May 2025 04:10:39 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>函数对象（仿函数）以及函数模板与类模板</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/han-shu-dui-xiang-%EF%BC%88-fang-han-shu-%EF%BC%89-yi-ji-han-shu-mo-ban-yu-lei-mo-ban.html</link><description>## 函数模板与类模板
+
+### 一、关键区别：（举例）
+
+#### 1. **`sort`** **是函数模板**
+
+cpp
+
+```cpp
+template&lt; class RandomIt, class Compare &gt;
+void sort( RandomIt first, RandomIt last, Compare comp );
+```
+
+* **lambda 可以隐式转换为函数参数**：
+  函数调用时，lambda 会被推导为具体的匿名类型，作为`comp`参数传递给`sort`。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/han-shu-dui-xiang-%EF%BC%88-fang-han-shu-%EF%BC%89-yi-ji-han-shu-mo-ban-yu-lei-mo-ban.html</guid><pubDate>Mon, 12 May 2025 04:10:13 +0000</pubDate></item><item><title>2025/5/11周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-5-11-zhou-ji.html</link><description>一切都是缘分吗？所谓命运的馈赠。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/2025-5-11-zhou-ji.html</guid><pubDate>Sun, 11 May 2025 08:17:23 +0000</pubDate></item><item><title>C++的Lambda表达式（隐函数）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/C%2B%2B-de-Lambda-biao-da-shi-%EF%BC%88-yin-han-shu-%EF%BC%89.html</link><description>1. #### 基本结构：
 
     `[capture](parameters) -&gt; return_type { body }`
 
