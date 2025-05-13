@@ -1,5 +1,68 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Tue, 13 May 2025 15:04:40 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>Bellman_ford</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/Bellman_ford.html</link><description>&gt; 思路特别像prim
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Tue, 13 May 2025 15:30:43 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>prim（记录树）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/prim%EF%BC%88-ji-lu-shu-%EF%BC%89.html</link><description>## prim三部曲：
+
+1. 选择距离生成树最近的节点
+2. 把最近节点加入生成树
+3. 更新非生成树节点到生成树的距离
+
+&gt; 使用一维数组存储最小生成树
+
+## 记录树的细节分析：
+
+* 树的特点是入度为1，所以记录父节点不会出现链接关系被覆盖的情况
+
+```cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+int main() {
+    int n, m, s, e, val;
+    cin &gt;&gt; n &gt;&gt; m;
+    vector&lt;vector&lt;int&gt;&gt; graph(n + 1, vector&lt;int&gt;(n + 1, INT_MAX));
+    //记录树+
+    vector&lt;int&gt; parent(n + 1, -1);
+    for(int i = 0; i &lt; m; i++) {
+        cin &gt;&gt; s &gt;&gt; e &gt;&gt; val;
+        graph[s][e] = val;
+        graph[e][s] = val;
+    }
+
+    vector&lt;bool&gt; visted(n + 1, false);
+    vector&lt;int&gt; miniDist(n + 1, INT_MAX);
+    miniDist[1] = 0;
+
+    for(int i = 0; i &lt; n; i++) {
+        int cur = 0;
+        //寻找最近距离的点
+        for(int j = 1; j &lt;= n; j++) {
+            if(!visted[j] &amp;&amp; miniDist[j] &lt; miniDist[cur]) {
+                cur = j;
+            }
+        }
+        //将该标记为visited
+        visted[cur] = true;
+        //更新miniDist数组
+        for(int j = 1; j &lt;= n; j++) {
+            if(!visted[j] &amp;&amp; miniDist[j] &gt; graph[cur][j]) {
+                miniDist[j] = graph[cur][j];
+                //记录点的连接关系+
+                parent[j] = cur;
+            }
+        }
+    }
+    //输出 最小生成树
+    int res = 0;
+    for(int i = 1; i &lt;= n; i++) {
+        res += miniDist[i];
+    }
+    cout &lt;&lt; res &lt;&lt; endl;
+
+    // 输出 最小生成树边的链接情况
+    for (int i = 1; i &lt;= v; i++) {
+        cout &lt;&lt; i &lt;&lt; '-&gt;' &lt;&lt; parent[i] &lt;&lt; endl;
+    }
+    return 0;
+}
+```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/prim%EF%BC%88-ji-lu-shu-%EF%BC%89.html</guid><pubDate>Tue, 13 May 2025 15:30:16 +0000</pubDate></item><item><title>Bellman_ford</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/Bellman_ford.html</link><description>&gt; 思路特别像prim
 
 ## 过程：
 
