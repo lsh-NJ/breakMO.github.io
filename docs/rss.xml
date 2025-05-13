@@ -1,5 +1,65 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Tue, 13 May 2025 16:06:40 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>prim（记录树）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/prim%EF%BC%88-ji-lu-shu-%EF%BC%89.html</link><description>## prim三部曲：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Tue, 13 May 2025 16:31:00 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>SPFA（Bellman_ford队列优化）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/SPFA%EF%BC%88Bellman_ford-dui-lie-you-hua-%EF%BC%89.html</link><description>## 解析：
+
+1. 相对于普通版优化掉了被`if(!minDist[start])`排除的无效松弛
+
+    * 通过队列存储可以对周围进行有效松弛的点
+2. 为什么队列中不能同时存在一个点但是队列中可以多次存在一个点？
+
+    * 有可能先接触到的点的最短距离还可以进行松弛，那么之后的点位都需要继续进行松弛，通过队列的形式也恰巧可以再次发散松弛后续节点并排除已松弛到最佳的节点
+
+## 注意：
+
+* `queue`容器要使用`front()`
+* `top()`函数用于`stack`\\`priority_queue`容器
+* 依然对每个遍历到的点都要进行`minDist`最短距离的刷新
+* 只在队列是否要插入点时判断点是否已经在队列中
+
+## 代码：
+
+```cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    int n, m, s, e, val;
+    cin &gt;&gt; n &gt;&gt; m;
+    vector&lt;list&lt;pair&lt;int, int&gt;&gt;&gt; grid(n + 1);
+    for(int i = 0; i &lt; m; i++) {
+        cin &gt;&gt; s &gt;&gt; e &gt;&gt; val;
+        grid[s].push_back({e, val});
+    }
+    
+    vector&lt;int&gt; minDist(n + 1, INT_MAX);
+    vector&lt;int&gt; inQueue(n + 1, false);//记录已经在队列中的元素
+    minDist[1] = 0;
+    queue&lt;int&gt; q;
+    q.push(1);
+    inQueue[1] = true;
+    
+    while (!q.empty())
+    {
+        int cur = q.front();
+        q.pop();
+        inQueue[cur] = false;
+        for(pair&lt;int, int&gt; edge:grid[cur]) {
+            int to = edge.first;
+            int val = edge.second;
+            if(val + minDist[cur] &lt; minDist[to]) {
+                minDist[to] = val + minDist[cur];
+                //已经在队列中不用重复添加
+                if(!inQueue[to]) {
+                    inQueue[to] = true;
+                    q.push(to);
+                }
+            }
+        }
+    }
+    
+
+    minDist[n] == INT_MAX? cout &lt;&lt; 'unconnected' &lt;&lt; endl: cout &lt;&lt; minDist[n] &lt;&lt; endl;
+}
+```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/SPFA%EF%BC%88Bellman_ford-dui-lie-you-hua-%EF%BC%89.html</guid><pubDate>Tue, 13 May 2025 16:30:33 +0000</pubDate></item><item><title>prim（记录树）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/prim%EF%BC%88-ji-lu-shu-%EF%BC%89.html</link><description>## prim三部曲：
 
 1. 选择距离生成树最近的节点
 2. 把最近节点加入生成树
