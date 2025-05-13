@@ -15,7 +15,7 @@
 ## 过程：
 
 * 对`m`条边进行`n - 1`（点数-1）次松弛，更新每个点到原点的最短距离`minDist[to] = min(minDist[to], minDist[start] + val);`
-* 理论上，`i`次松弛使距离原点`i`条边的节点距离原点最近
+* 理论上，i次松弛使相应节点有距离i条边的最短距离（有也就是说大于i次松弛可能会找到距离边数更多但更短的距离）
 
 ```cpp
 #include <bits/stdc++.h>
@@ -59,7 +59,7 @@ int main() {
 ## 过程：
 
 * 对`m`条边进行`n - 1`（点数-1）次松弛，更新每个点到原点的最短距离`minDist[to] = min(minDist[to], minDist[start] + val);`
-* 理论上，`i`次松弛使距离原点`i`条边的节点距离原点最近
+* 理论上，i次松弛使相应节点有距离i条边的最短距离（有也就是说大于i次松弛可能会找到距离边数更多但更短的距离）
 
 ```cpp
 #include <bits/stdc++.h>
@@ -173,7 +173,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h2>过程：</h2>
 <ul>
 <li>对<code class="notranslate">m</code>条边进行<code class="notranslate">n - 1</code>（点数-1）次松弛，更新每个点到原点的最短距离<code class="notranslate">minDist[to] = min(minDist[to], minDist[start] + val);</code></li>
-<li>理论上，<code class="notranslate">i</code>次松弛使距离原点<code class="notranslate">i</code>条边的节点距离原点最近</li>
+<li>理论上，i次松弛使相应节点有距离i条边的最短距离（有也就是说大于i次松弛可能会找到距离边数更多但更短的距离）</li>
 </ul>
 <div class="highlight highlight-source-c++"><pre class="notranslate">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>bits/stdc++.h<span class="pl-pds">&gt;</span></span>
 <span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span>
