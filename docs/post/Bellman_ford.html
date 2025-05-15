@@ -16,6 +16,11 @@
 
 * 对`m`条边进行`n - 1`（点数-1）次松弛，更新每个点到原点的最短距离`minDist[to] = min(minDist[to], minDist[start] + val);`
 * 理论上，i次松弛使相应节点有距离i条边的最短距离（有也就是说大于i次松弛可能会找到距离边数更多但更短的距离）
+## 优化 判断负权回路：
+
+* 如果存在负权回路那么松弛n-1次不会达到最小值，理论可以无限松弛，那么就多松弛一次检查最小值是否会发生变化
+
+## 代码：
 
 ```cpp
 #include <bits/stdc++.h>
@@ -24,33 +29,38 @@ using namespace std;
 int main() {
     int n, m, s, e, val;
     cin >> n >> m;
-
-	//用来存放边与其权值的数组
     vector<vector<int>> grid;
     for(int i = 0; i < m; i++) {
         cin >> s >> e >> val;
         grid.push_back({s, e, val});
     }
 
-	//存放距离原点的最短总距离
     vector<int> minDist(n + 1, INT_MAX);
     minDist[1] = 0;
-
+    bool flag = false;//记录是否存在负权回路
     //n - 1次松弛
-    for(int i = 0; i < n - 1; i++) {
+    for(int i = 0; i < n; i++) {
         //对每一条边进行松弛
         for(int j = 0; j < m; j++) {
             int start = grid[j][0];
             int to = grid[j][1];
             int val = grid[j][2];
-			//松弛的过程
-            if(minDist[start] != INT_MAX && minDist[start] + val < minDist[to]) {
-                minDist[to] = minDist[start] + val;
+            if(i < n - 1) {
+                if(minDist[start] != INT_MAX && minDist[start] + val < minDist[to]) {
+                    minDist[to] = minDist[start] + val;
+                }
+            } else {
+                if(minDist[start] != INT_MAX && minDist[start] + val < minDist[to]) {
+                    flag = true;
+                }
             }
         }
     }
+    if(flag) cout << 'circle' << endl;
+    else
+        minDist[n] == INT_MAX? cout << 'unconnected' << endl: cout << minDist[n] << endl;
 
-    minDist[n] == INT_MAX? cout << 'unconnected' << endl: cout << minDist[n] << endl;
+    return 0;
 }
 ```。">
 <meta property="og:title" content="Bellman_ford">
@@ -60,6 +70,11 @@ int main() {
 
 * 对`m`条边进行`n - 1`（点数-1）次松弛，更新每个点到原点的最短距离`minDist[to] = min(minDist[to], minDist[start] + val);`
 * 理论上，i次松弛使相应节点有距离i条边的最短距离（有也就是说大于i次松弛可能会找到距离边数更多但更短的距离）
+## 优化 判断负权回路：
+
+* 如果存在负权回路那么松弛n-1次不会达到最小值，理论可以无限松弛，那么就多松弛一次检查最小值是否会发生变化
+
+## 代码：
 
 ```cpp
 #include <bits/stdc++.h>
@@ -68,33 +83,38 @@ using namespace std;
 int main() {
     int n, m, s, e, val;
     cin >> n >> m;
-
-	//用来存放边与其权值的数组
     vector<vector<int>> grid;
     for(int i = 0; i < m; i++) {
         cin >> s >> e >> val;
         grid.push_back({s, e, val});
     }
 
-	//存放距离原点的最短总距离
     vector<int> minDist(n + 1, INT_MAX);
     minDist[1] = 0;
-
+    bool flag = false;//记录是否存在负权回路
     //n - 1次松弛
-    for(int i = 0; i < n - 1; i++) {
+    for(int i = 0; i < n; i++) {
         //对每一条边进行松弛
         for(int j = 0; j < m; j++) {
             int start = grid[j][0];
             int to = grid[j][1];
             int val = grid[j][2];
-			//松弛的过程
-            if(minDist[start] != INT_MAX && minDist[start] + val < minDist[to]) {
-                minDist[to] = minDist[start] + val;
+            if(i < n - 1) {
+                if(minDist[start] != INT_MAX && minDist[start] + val < minDist[to]) {
+                    minDist[to] = minDist[start] + val;
+                }
+            } else {
+                if(minDist[start] != INT_MAX && minDist[start] + val < minDist[to]) {
+                    flag = true;
+                }
             }
         }
     }
+    if(flag) cout << 'circle' << endl;
+    else
+        minDist[n] == INT_MAX? cout << 'unconnected' << endl: cout << minDist[n] << endl;
 
-    minDist[n] == INT_MAX? cout << 'unconnected' << endl: cout << minDist[n] << endl;
+    return 0;
 }
 ```。">
 <meta property="og:type" content="article">
@@ -175,39 +195,49 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>对<code class="notranslate">m</code>条边进行<code class="notranslate">n - 1</code>（点数-1）次松弛，更新每个点到原点的最短距离<code class="notranslate">minDist[to] = min(minDist[to], minDist[start] + val);</code></li>
 <li>理论上，i次松弛使相应节点有距离i条边的最短距离（有也就是说大于i次松弛可能会找到距离边数更多但更短的距离）</li>
 </ul>
+<h2>优化 判断负权回路：</h2>
+<ul>
+<li>如果存在负权回路那么松弛n-1次不会达到最小值，理论可以无限松弛，那么就多松弛一次检查最小值是否会发生变化</li>
+</ul>
+<h2>代码：</h2>
 <div class="highlight highlight-source-c++"><pre class="notranslate">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>bits/stdc++.h<span class="pl-pds">&gt;</span></span>
 <span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span>
 
 <span class="pl-k">int</span> <span class="pl-en">main</span>() {
     <span class="pl-k">int</span> n, m, s, e, val;
     cin &gt;&gt; n &gt;&gt; m;
-
-	<span class="pl-c"><span class="pl-c">//</span>用来存放边与其权值的数组</span>
     vector&lt;vector&lt;<span class="pl-k">int</span>&gt;&gt; grid;
     <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; m; i++) {
         cin &gt;&gt; s &gt;&gt; e &gt;&gt; val;
         grid.<span class="pl-c1">push_back</span>({s, e, val});
     }
 
-	<span class="pl-c"><span class="pl-c">//</span>存放距离原点的最短总距离</span>
     vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">minDist</span>(n + <span class="pl-c1">1</span>, INT_MAX);
     minDist[<span class="pl-c1">1</span>] = <span class="pl-c1">0</span>;
-
+    <span class="pl-k">bool</span> flag = <span class="pl-c1">false</span>;<span class="pl-c"><span class="pl-c">//</span>记录是否存在负权回路</span>
     <span class="pl-c"><span class="pl-c">//</span>n - 1次松弛</span>
-    <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; n - <span class="pl-c1">1</span>; i++) {
+    <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; n; i++) {
         <span class="pl-c"><span class="pl-c">//</span>对每一条边进行松弛</span>
         <span class="pl-k">for</span>(<span class="pl-k">int</span> j = <span class="pl-c1">0</span>; j &lt; m; j++) {
             <span class="pl-k">int</span> start = grid[j][<span class="pl-c1">0</span>];
             <span class="pl-k">int</span> to = grid[j][<span class="pl-c1">1</span>];
             <span class="pl-k">int</span> val = grid[j][<span class="pl-c1">2</span>];
-			<span class="pl-c"><span class="pl-c">//</span>松弛的过程</span>
-            <span class="pl-k">if</span>(minDist[start] != INT_MAX &amp;&amp; minDist[start] + val &lt; minDist[to]) {
-                minDist[to] = minDist[start] + val;
+            <span class="pl-k">if</span>(i &lt; n - <span class="pl-c1">1</span>) {
+                <span class="pl-k">if</span>(minDist[start] != INT_MAX &amp;&amp; minDist[start] + val &lt; minDist[to]) {
+                    minDist[to] = minDist[start] + val;
+                }
+            } <span class="pl-k">else</span> {
+                <span class="pl-k">if</span>(minDist[start] != INT_MAX &amp;&amp; minDist[start] + val &lt; minDist[to]) {
+                    flag = <span class="pl-c1">true</span>;
+                }
             }
         }
     }
+    <span class="pl-k">if</span>(flag) cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>circle<span class="pl-pds">"</span></span> &lt;&lt; endl;
+    <span class="pl-k">else</span>
+        minDist[n] == INT_MAX? cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>unconnected<span class="pl-pds">"</span></span> &lt;&lt; endl: cout &lt;&lt; minDist[n] &lt;&lt; endl;
 
-    minDist[n] == INT_MAX? cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>unconnected<span class="pl-pds">"</span></span> &lt;&lt; endl: cout &lt;&lt; minDist[n] &lt;&lt; endl;
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
 }</pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
