@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Wed, 14 May 2025 13:32:15 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>四重交换（应用树状数组）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/si-zhong-jiao-huan-%EF%BC%88-ying-yong-shu-zhuang-shu-zu-%EF%BC%89.html</link><description>### 题目大意：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Thu, 15 May 2025 06:12:18 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>四重交换（应用树状数组）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/si-zhong-jiao-huan-%EF%BC%88-ying-yong-shu-zhuang-shu-zu-%EF%BC%89.html</link><description>### 题目大意：
 
 &gt; 给定一个长度为`n`的全排列数组，可以进行的操作是：选定位置`i`，`swap(a[i], a[i + 2]);swap(a[i + 1], a[i + 3]);`要求经过一定的操作以后输出字典序最小的数组
 
@@ -24,6 +24,10 @@
 * 依然对每个遍历到的点都要进行`minDist`最短距离的刷新
 * 只在队列是否要插入点时判断点是否已经在队列中
 
+## 优化 检查负权回路：
+
+* 记录点进入队列的次数就相当于记录了松弛的次数
+
 ## 代码：
 
 ```cpp
@@ -45,6 +49,8 @@ int main() {
     queue&lt;int&gt; q;
     q.push(1);
     inQueue[1] = true;
+    vector&lt;int&gt; count(n + 1, 0);//记录节点加入队列的次数
+    bool flag = false;//记录是否存在负权回路
     
     while (!q.empty())
     {
@@ -60,13 +66,21 @@ int main() {
                 if(!inQueue[to]) {
                     inQueue[to] = true;
                     q.push(to);
+                    count[to]++;
+                    if(count[to] == n) {//松弛超过n - 1次
+                        flag = true;
+                        while(!q.empty()) q.pop();
+                        break;
+                    }
                 }
             }
         }
     }
     
-
-    minDist[n] == INT_MAX? cout &lt;&lt; 'unconnected' &lt;&lt; endl: cout &lt;&lt; minDist[n] &lt;&lt; endl;
+    if(flag) cout &lt;&lt; 'circle' &lt;&lt; endl;
+    else
+        minDist[n] == INT_MAX? cout &lt;&lt; 'unconnected' &lt;&lt; endl: cout &lt;&lt; minDist[n] &lt;&lt; endl;
+    return 0;
 }
 ```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/SPFA%EF%BC%88Bellman_ford-dui-lie-you-hua-%EF%BC%89.html</guid><pubDate>Tue, 13 May 2025 16:30:33 +0000</pubDate></item><item><title>prim（记录树）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/prim%EF%BC%88-ji-lu-shu-%EF%BC%89.html</link><description>## prim三部曲：
 

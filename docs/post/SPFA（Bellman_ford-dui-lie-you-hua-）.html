@@ -26,6 +26,10 @@
 * 依然对每个遍历到的点都要进行`minDist`最短距离的刷新
 * 只在队列是否要插入点时判断点是否已经在队列中
 
+## 优化 检查负权回路：
+
+* 记录点进入队列的次数就相当于记录了松弛的次数
+
 ## 代码：
 
 ```cpp
@@ -47,6 +51,8 @@ int main() {
     queue<int> q;
     q.push(1);
     inQueue[1] = true;
+    vector<int> count(n + 1, 0);//记录节点加入队列的次数
+    bool flag = false;//记录是否存在负权回路
     
     while (!q.empty())
     {
@@ -62,13 +68,21 @@ int main() {
                 if(!inQueue[to]) {
                     inQueue[to] = true;
                     q.push(to);
+                    count[to]++;
+                    if(count[to] == n) {//松弛超过n - 1次
+                        flag = true;
+                        while(!q.empty()) q.pop();
+                        break;
+                    }
                 }
             }
         }
     }
     
-
-    minDist[n] == INT_MAX? cout << 'unconnected' << endl: cout << minDist[n] << endl;
+    if(flag) cout << 'circle' << endl;
+    else
+        minDist[n] == INT_MAX? cout << 'unconnected' << endl: cout << minDist[n] << endl;
+    return 0;
 }
 ```。">
 <meta property="og:title" content="SPFA（Bellman_ford队列优化）">
@@ -88,6 +102,10 @@ int main() {
 * 依然对每个遍历到的点都要进行`minDist`最短距离的刷新
 * 只在队列是否要插入点时判断点是否已经在队列中
 
+## 优化 检查负权回路：
+
+* 记录点进入队列的次数就相当于记录了松弛的次数
+
 ## 代码：
 
 ```cpp
@@ -109,6 +127,8 @@ int main() {
     queue<int> q;
     q.push(1);
     inQueue[1] = true;
+    vector<int> count(n + 1, 0);//记录节点加入队列的次数
+    bool flag = false;//记录是否存在负权回路
     
     while (!q.empty())
     {
@@ -124,13 +144,21 @@ int main() {
                 if(!inQueue[to]) {
                     inQueue[to] = true;
                     q.push(to);
+                    count[to]++;
+                    if(count[to] == n) {//松弛超过n - 1次
+                        flag = true;
+                        while(!q.empty()) q.pop();
+                        break;
+                    }
                 }
             }
         }
     }
     
-
-    minDist[n] == INT_MAX? cout << 'unconnected' << endl: cout << minDist[n] << endl;
+    if(flag) cout << 'circle' << endl;
+    else
+        minDist[n] == INT_MAX? cout << 'unconnected' << endl: cout << minDist[n] << endl;
+    return 0;
 }
 ```。">
 <meta property="og:type" content="article">
@@ -225,6 +253,10 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>依然对每个遍历到的点都要进行<code class="notranslate">minDist</code>最短距离的刷新</li>
 <li>只在队列是否要插入点时判断点是否已经在队列中</li>
 </ul>
+<h2>优化 检查负权回路：</h2>
+<ul>
+<li>记录点进入队列的次数就相当于记录了松弛的次数</li>
+</ul>
 <h2>代码：</h2>
 <div class="highlight highlight-source-c++"><pre class="notranslate">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>bits/stdc++.h<span class="pl-pds">&gt;</span></span>
 <span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span>
@@ -244,6 +276,8 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     queue&lt;<span class="pl-k">int</span>&gt; q;
     q.<span class="pl-c1">push</span>(<span class="pl-c1">1</span>);
     inQueue[<span class="pl-c1">1</span>] = <span class="pl-c1">true</span>;
+    vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">count</span>(n + <span class="pl-c1">1</span>, <span class="pl-c1">0</span>);<span class="pl-c"><span class="pl-c">//</span>记录节点加入队列的次数</span>
+    <span class="pl-k">bool</span> flag = <span class="pl-c1">false</span>;<span class="pl-c"><span class="pl-c">//</span>记录是否存在负权回路</span>
     
     <span class="pl-k">while</span> (!q.<span class="pl-c1">empty</span>())
     {
@@ -259,13 +293,21 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
                 <span class="pl-k">if</span>(!inQueue[to]) {
                     inQueue[to] = <span class="pl-c1">true</span>;
                     q.<span class="pl-c1">push</span>(to);
+                    count[to]++;
+                    <span class="pl-k">if</span>(count[to] == n) {<span class="pl-c"><span class="pl-c">//</span>松弛超过n - 1次</span>
+                        flag = <span class="pl-c1">true</span>;
+                        <span class="pl-k">while</span>(!q.<span class="pl-c1">empty</span>()) q.<span class="pl-c1">pop</span>();
+                        <span class="pl-k">break</span>;
+                    }
                 }
             }
         }
     }
     
-
-    minDist[n] == INT_MAX? cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>unconnected<span class="pl-pds">"</span></span> &lt;&lt; endl: cout &lt;&lt; minDist[n] &lt;&lt; endl;
+    <span class="pl-k">if</span>(flag) cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>circle<span class="pl-pds">"</span></span> &lt;&lt; endl;
+    <span class="pl-k">else</span>
+        minDist[n] == INT_MAX? cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>unconnected<span class="pl-pds">"</span></span> &lt;&lt; endl: cout &lt;&lt; minDist[n] &lt;&lt; endl;
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
 }</pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 

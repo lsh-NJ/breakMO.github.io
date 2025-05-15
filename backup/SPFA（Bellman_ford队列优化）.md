@@ -14,6 +14,10 @@
 * 依然对每个遍历到的点都要进行`minDist`最短距离的刷新
 * 只在队列是否要插入点时判断点是否已经在队列中
 
+## 优化 检查负权回路：
+
+* 记录点进入队列的次数就相当于记录了松弛的次数
+
 ## 代码：
 
 ```cpp
@@ -35,6 +39,8 @@ int main() {
     queue<int> q;
     q.push(1);
     inQueue[1] = true;
+    vector<int> count(n + 1, 0);//记录节点加入队列的次数
+    bool flag = false;//记录是否存在负权回路
     
     while (!q.empty())
     {
@@ -50,12 +56,20 @@ int main() {
                 if(!inQueue[to]) {
                     inQueue[to] = true;
                     q.push(to);
+                    count[to]++;
+                    if(count[to] == n) {//松弛超过n - 1次
+                        flag = true;
+                        while(!q.empty()) q.pop();
+                        break;
+                    }
                 }
             }
         }
     }
     
-
-    minDist[n] == INT_MAX? cout << "unconnected" << endl: cout << minDist[n] << endl;
+    if(flag) cout << "circle" << endl;
+    else
+        minDist[n] == INT_MAX? cout << "unconnected" << endl: cout << minDist[n] << endl;
+    return 0;
 }
 ```
