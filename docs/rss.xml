@@ -1,5 +1,61 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Thu, 15 May 2025 16:26:53 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>单源最短路</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/dan-yuan-zui-duan-lu.html</link><description>## 思路
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 16 May 2025 14:06:07 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>数组双端切割</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/shu-zu-shuang-duan-qie-ge.html</link><description>## 题目大意：
+
+&gt; 给定长度为`n`的非零数组，取数组中的任意一个下标，进行以下操作：
+&gt;
+&gt; 1. 正数，切割掉包括当前数和前面的所有元素，并获得当前数个硬币
+&gt; 2. 负数，切割掉包括当前数和后面的所有元素，并获得当前数个硬币w
+&gt;
+&gt; 问怎样操作使数组为空时硬币数量最多？
+
+## 思路：
+
+1. 最基础的想法，切割最左端的正数或者最右侧的负数就可以尽量提高切割的次数来提高硬币总数
+2. 但是显然有根本不满足以上想法的情况，这时就会出现，切割一个左侧的正数，这个正数的左侧的所有负数都没了，如果切割这些负数比切割这个正数有更高的收益呢？这时就想到了统计前缀和，统计从左侧开始切割获得的正数大小，统计从右侧开始获得的负数大小
+3. 此时左右侧正、负数分别相加（切割一个位置左侧的正数、右侧的负数）就是答案了
+
+
+## 代码：
+
+```cpp
+#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+int main() {
+    int t;
+    cin &gt;&gt; t;
+    while(t--) {
+        int n;
+        cin &gt;&gt; n;
+        vector&lt;int&gt; a(n + 1);
+        for(int i = 1; i &lt;= n; i++) cin &gt;&gt; a[i];
+        vector&lt;long long&gt; preP(n + 1);preP[0] = 0;//正序遍历存储+数前缀和
+        vector&lt;long long&gt; revN(n + 2);revN[n + 1] = 0;//逆序遍历存储-数前缀和
+
+        for(int i = 1; i &lt;= n; i++) {
+            if(a[i] &gt; 0) {
+                preP[i] = a[i] + preP[i - 1];
+            } else {
+                preP[i] = preP[i - 1];
+            }
+        }
+        for(int i = n; i &gt;= 1; i--) {
+            if(a[i] &lt; 0) {
+                revN[i] = abs(a[i]) + revN[i + 1];
+            } else {
+                revN[i] = revN[i + 1];
+            }
+        }
+
+        long long res = 0;
+        for(int i = 1; i &lt;= n; i++) {
+            res = max(res, preP[i] + revN[i]);
+        }
+        cout &lt;&lt; res &lt;&lt; endl;
+    }
+    return 0;
+}
+```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/shu-zu-shuang-duan-qie-ge.html</guid><pubDate>Fri, 16 May 2025 14:05:40 +0000</pubDate></item><item><title>单源最短路</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/dan-yuan-zui-duan-lu.html</link><description>## 思路
 
 * 要获得起源到终点相隔不多于`k`个节点的最短路径，可以想到`n`次松弛找到`n`条边的最短路径，那就松弛`k + 1`次
 * 对于负权回路结果并不理想，原因是受边的顺序的影响，有可能1次就能松弛很多节点，再受负权回路影响会使期望变小，解决方法是防止这种现象的出现，即要确保`&lt;n`次松弛不能得到`n`条边的最短路径，就需要记录上一个`minDist`，参照上一个来调整当前的节点。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/dan-yuan-zui-duan-lu.html</guid><pubDate>Thu, 15 May 2025 07:36:53 +0000</pubDate></item><item><title>单源有限最短路</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/dan-yuan-you-xian-zui-duan-lu.html</link><description>## 思路
