@@ -1,5 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Sun, 18 May 2025 02:56:41 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>Floyd多源最短路</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/Floyd-duo-yuan-zui-duan-lu.html</link><description>## 核心思想：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Sun, 18 May 2025 02:58:56 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>方块切割博弈（博弈但不是博弈？🤣）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/fang-kuai-qie-ge-bo-yi-%EF%BC%88-bo-yi-dan-bu-shi-bo-yi-%EF%BC%9F%F0%9F%A4%A3%EF%BC%89.html</link><description>## 题目大意：
+
+&gt; 给定一个`n * m`格子的图，和一个位置在`(a,b)`格子处的一个标记，现在有两名玩家进行操作，直到该图只剩一个格子
+&gt;
+&gt; 1. 第一名玩家先进行切割，没有标记的部分将消失，他会尽力使切割的次数尽量少
+&gt; 2. 第二名玩家调整标记的位置，他会尽力使切割的次数尽量多
+&gt;
+&gt; 预测给定的样例需要切割几刀结束
+
+## 思路：
+
+1. 切割分为两个阶段，初始阶段和被第二名玩家移动后的切割阶段。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/fang-kuai-qie-ge-bo-yi-%EF%BC%88-bo-yi-dan-bu-shi-bo-yi-%EF%BC%9F%F0%9F%A4%A3%EF%BC%89.html</guid><pubDate>Sun, 18 May 2025 02:58:32 +0000</pubDate></item><item><title>Floyd多源最短路</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/Floyd-duo-yuan-zui-duan-lu.html</link><description>## 核心思想：
 
 * 动态规划
 
