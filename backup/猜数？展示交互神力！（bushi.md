@@ -29,6 +29,43 @@
 
       而且这个乘以9然后进行数位和的结果在进行数位和一定等于9，这就构成了唯一确定的数
 
-3. ### 最终展示神力：
+3. ### 使用最少的操作最终展示神力：
 
-    `S[(1ed−1)x]=9d ∀x∈[1,1ed]`
+    - `S[(1ed−1)x]=9d ∀x∈[1,1ed]`
+    - 证明过程：
+
+      ![Capture_20250519_125615](assets/Capture_20250519_125615-20250519125812-miozzo7.jpg)
+    - 在第二步中其实就已经发现，第二次`digit`的值只有`9`现在我们知道，这并非巧合，由于第一次`digit`的结果最大是`81`，对应`d = 1`的情况
+    - 这是唯一确定的值是`81`，注意题目要求使用最少的操作，所以如果`n = 81`不需要再来一个`add n - 81`的命令了
+
+## 展示最后一阶段的代码：
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+void solution() {
+    int n;
+    cin >> n;
+    
+    cout << "mul 999999999" << endl;
+    int x;cin >> x;
+    
+    cout << "digit" << endl;
+    cin >> x;
+
+    if(n != 81) {
+        cout << "add " << n - 81 << endl;
+        cin >> x;
+    }
+
+    cout << "!" << endl;
+    cin >> x;
+}
+
+int main() {
+    int t;
+    cin >> t;
+    while(t--) solution();
+    return 0;
+}
+```
