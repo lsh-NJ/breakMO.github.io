@@ -144,6 +144,41 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <ul>
 <li>图初始化值不能为<code class="notranslate">INT_MAX</code>，因为有求和的部分，<code class="notranslate">INT_MAX</code>遇到求和会出现很多问题</li>
 </ul>
+<h2>使用滚动数组优化空间：</h2>
+<ul>
+<li>动态规划祖传秘技了属于是</li>
+</ul>
+<div class="highlight highlight-source-c++"><pre class="notranslate">#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>bits/stdc++.h<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span>
+
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+    <span class="pl-c1">ios::sync_with_stdio</span>(<span class="pl-c1">0</span>);cin.<span class="pl-c1">tie</span>(<span class="pl-c1">0</span>);
+    <span class="pl-k">int</span> n, m; cin &gt;&gt; n &gt;&gt; m;
+    <span class="pl-k">int</span> s, e, val;
+    <span class="pl-c"><span class="pl-c">//</span>保存图以及各种最短路径，是多源最短路动态规划的dp数组</span>
+    vector&lt;vector&lt;<span class="pl-k">int</span>&gt;&gt; <span class="pl-c1">grid</span>(n + <span class="pl-c1">1</span>, vector&lt;<span class="pl-k">int</span>&gt; (n + <span class="pl-c1">1</span>, <span class="pl-c1">10005</span>));
+    <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; m; i++) {
+        cin &gt;&gt; s &gt;&gt; e &gt;&gt; val;
+        grid[s][e] = val;
+        grid[e][s] = val;
+    }
+
+    <span class="pl-k">for</span>(<span class="pl-k">int</span> k = <span class="pl-c1">1</span>; k &lt;= n; k++) {
+        <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">1</span>; i &lt;= n; i++) {
+            <span class="pl-k">for</span>(<span class="pl-k">int</span> j = <span class="pl-c1">1</span>; j &lt;= n; j++) {
+                <span class="pl-c"><span class="pl-c">//</span>在“k不是i到j最短路径经过的节点”和“k是i到j最短路径经过的节点”之中取最小值</span>
+                grid[i][j] = <span class="pl-c1">min</span>(grid[i][j], grid[i][k] + grid[k][j]);
+            }
+        }
+    }
+
+    <span class="pl-k">int</span> q; cin &gt;&gt; q;
+    <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; q; i++) {
+        cin &gt;&gt; s &gt;&gt; e;
+        <span class="pl-k">if</span>(grid[s][e] == <span class="pl-c1">10005</span>) cout &lt;&lt; -<span class="pl-c1">1</span> &lt;&lt; endl;
+        <span class="pl-k">else</span> cout &lt;&lt; grid[s][e] &lt;&lt; endl;
+    }
+}</pre></div>
 <h2>代码：</h2>
 <div class="highlight highlight-source-c++"><pre class="notranslate">#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>bits/stdc++.h<span class="pl-pds">&gt;</span></span>
 <span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span>

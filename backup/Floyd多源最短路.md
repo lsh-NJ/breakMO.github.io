@@ -32,6 +32,43 @@
 ## 注意：
 
 - 图初始化值不能为`INT_MAX`，因为有求和的部分，`INT_MAX`遇到求和会出现很多问题
+## 使用滚动数组优化空间：
+
+- 动态规划祖传秘技了属于是
+
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    ios::sync_with_stdio(0);cin.tie(0);
+    int n, m; cin >> n >> m;
+    int s, e, val;
+    //保存图以及各种最短路径，是多源最短路动态规划的dp数组
+    vector<vector<int>> grid(n + 1, vector<int> (n + 1, 10005));
+    for(int i = 0; i < m; i++) {
+        cin >> s >> e >> val;
+        grid[s][e] = val;
+        grid[e][s] = val;
+    }
+
+    for(int k = 1; k <= n; k++) {
+        for(int i = 1; i <= n; i++) {
+            for(int j = 1; j <= n; j++) {
+                //在“k不是i到j最短路径经过的节点”和“k是i到j最短路径经过的节点”之中取最小值
+                grid[i][j] = min(grid[i][j], grid[i][k] + grid[k][j]);
+            }
+        }
+    }
+
+    int q; cin >> q;
+    for(int i = 0; i < q; i++) {
+        cin >> s >> e;
+        if(grid[s][e] == 10005) cout << -1 << endl;
+        else cout << grid[s][e] << endl;
+    }
+}
+```
 
 ## 代码：
 
