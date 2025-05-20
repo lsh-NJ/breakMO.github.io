@@ -1,5 +1,97 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Mon, 19 May 2025 02:40:39 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>2025/5/18周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-5-18-zhou-ji.html</link><description>**好的节奏，应该从早睡早起开始**，一天的开始至少对我自己来说重要性是无需多言的。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/2025-5-18-zhou-ji.html</guid><pubDate>Sun, 18 May 2025 14:03:06 +0000</pubDate></item><item><title>猜数？展示交互神力！（bushi</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/cai-shu-%EF%BC%9F-zhan-shi-jiao-hu-shen-li-%EF%BC%81%EF%BC%88bushi.html</link><description>## 题目大意概述：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Tue, 20 May 2025 10:24:32 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>等权图给定移动数集合下的可达性</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/deng-quan-tu-gei-ding-yi-dong-shu-ji-he-xia-de-ke-da-xing.html</link><description>&lt;html&gt;
+&lt;body&gt;
+&lt;!--StartFragment--&gt;&lt;h2 id='题目大意-' updated='20250520164130'&gt;题目大意：&lt;/h2&gt;
+&lt;blockquote id='20250520164131-2bik7e6' updated='20250520164132'&gt;
+&lt;p id='20250520164132-j4g36en' updated='20250520165259'&gt;给定一个有n个点、m条边的图，给一个移动次数的集合，要求能在集合中选择并移除一个数后从起点1开始经过相应条边，要求结果输出每个顶点是否能到达，能输出1，不能输出0&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id='思路-' updated='20250520165304'&gt;思路:&lt;/h2&gt;
+&lt;ol id='20250520165306-x8vrisv' updated='20250520165308'&gt;
+&lt;li id='20250520165308-0jnj638' updated='20250520165308'&gt;只需要求起始点到目标点的最短距离，只要集合中的移动数总和或次小的移动数总和大于这个奇偶性相同的最短距离就可以到达&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id='注意-' updated='20250520165622'&gt;注意：&lt;/h2&gt;
+&lt;ol id='20250520165624-7j11bbp' updated='20250520165625'&gt;
+&lt;li id='20250520165625-rcayeb9' updated='20250520165625'&gt;因为本解过程有奇偶的要求，可以想到移动次数只有一个的时候不能估计两种奇偶性，但是点在有环的情况下可能会有奇偶分别的两种最短路，这就导致有可能产生疏漏，因此用二维数组存储奇偶两个最短距离&lt;/li&gt;
+&lt;li id='20250520165922-zhvt2yh' updated='20250520165922'&gt;本题明显是等权图，所以如下图所示使用BFS效率更高&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id='BFS-与-Dijkstra-算法的效率对比' updated='20250520164107'&gt;BFS 与 Dijkstra 算法的效率对比&lt;/h3&gt;
+
+维度 | 广度优先搜索（BFS） | Dijkstra 算法
+-- | -- | --
+图类型 | 仅适用于无权图或等权图 | 适用于非负权图（边权≥0）
+最短路径定义 | 顶点间的最少边数（步数） | 顶点间的最小权值和
+时间复杂度 | O(V + E)（V为顶点数，E为边数） | 取决于实现方式：- 普通数组：O(V^2)- 优先队列：O((V+E)log V）
+空间复杂度 | O(V)（队列存储顶点） | O(V)（存储距离和优先队列）
+效率对比 | 在无权图中效率更高，无需处理权值 | 在非负权图中不可替代，但需处理权值
+
+
+&lt;pre&gt;&lt;code class='language-cpp'&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
+using namespace std;
+
+vector&amp;lt;int&amp;gt; minDist;
+class mycomparison {
+public:
+    bool operator() (const int&amp;amp; a1, const int&amp;amp; a2) const {
+        return minDist[a1] &amp;gt; minDist[a2];
+    }
+};
+
+void solution() {
+
+    int n, m, l, s, e;
+    cin &amp;gt;&amp;gt; n &amp;gt;&amp;gt; m &amp;gt;&amp;gt; l;
+    //不用记录具体每一个数字，只需总和和最小的奇数（可以改变奇偶并且尽量不让改变奇偶后的值太小）
+    int sum = 0, minOdd = INT_MAX;
+    for(int i = 0; i &amp;lt; l; i++) {
+        int x; cin &amp;gt;&amp;gt; x;
+        if(x &amp;amp; 1) {
+            minOdd = min(minOdd, x);
+        }
+        sum += x;
+    }
+
+    vector&amp;lt;list&amp;lt;int&amp;gt;&amp;gt; grid(n + 1);
+    for(int i = 0; i &amp;lt; m; i++) {
+        cin &amp;gt;&amp;gt; s &amp;gt;&amp;gt; e;
+        grid[s].push_back(e);
+        grid[e].push_back(s);
+    }
+
+    vector&amp;lt;vector&amp;lt;int&amp;gt;&amp;gt; minDist(n + 1, vector&amp;lt;int&amp;gt; (2, INT_MAX));
+    minDist[1][0] = 0;
+    queue&amp;lt;pair&amp;lt;int, int&amp;gt;&amp;gt; q;
+    q.push({1, 0});
+    
+    while(!q.empty()) {
+        pair&amp;lt;int, int&amp;gt; cur = q.front(); q.pop();
+        for(int nextNode : grid[cur.first]) {
+            if(minDist[nextNode][!cur.second] &amp;gt; minDist[cur.first][cur.second] + 1) {
+                minDist[nextNode][!cur.second] = minDist[cur.first][cur.second] + 1;
+                q.push({nextNode, !cur.second});
+            }
+        }
+    }
+
+    for(int i = 1; i &amp;lt;= n; i++) {
+        bool found = 0;
+        for(int p = 0; p &amp;lt; 2; p++) {
+            int s = sum - (p == sum % 2? 0:minOdd);
+            if(s &amp;gt;= minDist[i][p]) found = 1;
+        }
+        cout &amp;lt;&amp;lt; found;
+    }
+    cout &amp;lt;&amp;lt; &amp;quot;\n&amp;quot;;
+}
+
+int main() {
+    int t; cin &amp;gt;&amp;gt; t;
+    while(t--) solution();
+    return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;!--EndFragment--&gt;
+&lt;/body&gt;
+&lt;/html&gt;。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/deng-quan-tu-gei-ding-yi-dong-shu-ji-he-xia-de-ke-da-xing.html</guid><pubDate>Tue, 20 May 2025 10:24:06 +0000</pubDate></item><item><title>2025/5/18周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-5-18-zhou-ji.html</link><description>**好的节奏，应该从早睡早起开始**，一天的开始至少对我自己来说重要性是无需多言的。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/2025-5-18-zhou-ji.html</guid><pubDate>Sun, 18 May 2025 14:03:06 +0000</pubDate></item><item><title>猜数？展示交互神力！（bushi</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/cai-shu-%EF%BC%9F-zhan-shi-jiao-hu-shen-li-%EF%BC%81%EF%BC%88bushi.html</link><description>## 题目大意概述：
 
 &gt; 给定一个未知数`x(0&lt;=x&lt;=1e9)`， 本题作为一道交互题有如下的交互过程：
 &gt;
