@@ -1,5 +1,52 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Tue, 20 May 2025 10:24:32 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>等权图给定移动数集合下的可达性</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/deng-quan-tu-gei-ding-yi-dong-shu-ji-he-xia-de-ke-da-xing.html</link><description>&lt;html&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Wed, 21 May 2025 01:02:39 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>二进制字符串”打印费用“</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/er-jin-zhi-zi-fu-chuan-%E2%80%9D-da-yin-fei-yong-%E2%80%9C.html</link><description>## 题目大意：
+
+&gt; 一个二进制字符串，每打印一次记为一次操作，切换打印零还是一也算一次操作，其实位置为0不需要进行切换，要求对字符串进行最多一次字串的反转，得到操作数最小的新字符串
+
+## 思路：
+
+1. 显然操作数 = 字符串长度 + 切换次数 + 1（如果起始位置为‘1’）
+2. 所有的字符都可以在最前方加字符0，以实现所有字符串计算的一视同仁
+3. 对字符串进行翻转时可以减少操作数，**其原理是**改变前后的“切换关系”，不需要切换，就少一次，那么最多少两次操作
+4. 思考这里的两次操作是否通用，即继续思考原理：
+
+    1. 当切换次数达到三次及以上时一定能减少两次操作，因为这时一定能保证找到一个字串使其前后交换以后前后都减少一次操作次数
+    2. 切换次数为2时可以减少一次
+    3. 切换次数小于等于1次不能减少
+
+## 代码：
+
+```cpp
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+void testCase() {
+    string s;
+    int n;
+    cin &gt;&gt; n;
+    cin &gt;&gt; s;
+    s='0'+s;
+    int ans = 0, cur = s[0];
+    for (int i = 1; i &lt;= n; i++) {
+        int dig = s[i];
+        if (cur != dig) 
+           ans++;
+        cur = dig;
+    }
+   if(ans&gt;=3)
+     cout&lt;&lt; ans-2 + n&lt;&lt;'\n';
+   else if(ans==2)
+     cout&lt;&lt; ans-1 + n&lt;&lt;'\n';
+   else 
+     cout&lt;&lt;ans+n&lt;&lt;'\n';
+}
+int main(){
+    int t;
+    cin&gt;&gt;t;
+    while(t--)
+        testCase();
+    return 0;
+}
+```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/er-jin-zhi-zi-fu-chuan-%E2%80%9D-da-yin-fei-yong-%E2%80%9C.html</guid><pubDate>Wed, 21 May 2025 01:02:12 +0000</pubDate></item><item><title>等权图给定移动数集合下的可达性</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/deng-quan-tu-gei-ding-yi-dong-shu-ji-he-xia-de-ke-da-xing.html</link><description>&lt;html&gt;
 &lt;body&gt;
 &lt;!--StartFragment--&gt;&lt;h2 id='题目大意-' updated='20250520164130'&gt;题目大意：&lt;/h2&gt;
 &lt;blockquote id='20250520164131-2bik7e6' updated='20250520164132'&gt;
