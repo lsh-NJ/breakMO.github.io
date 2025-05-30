@@ -1,5 +1,20 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 30 May 2025 10:08:15 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>移除一个点位后覆盖所有坐标的最小面积</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/yi-chu-yi-ge-dian-wei-hou-fu-gai-suo-you-zuo-biao-de-zui-xiao-mian-ji.html</link><description>## 题目大意：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 30 May 2025 10:26:56 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>Codeforces Round 1027 (Div. 3)完成题目回顾</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/Codeforces%20Round%201027%20%28Div.%203%29-wan-cheng-ti-mu-hui-gu.html</link><description>[[Codeforces Round 1027 (Div. 3)](https://codeforces.com/contest/2114)](https://codeforces.com/contest/2114)完成题目回顾
+
+## A.
+
+### 需要注意的问题：
+
+1. #### 除零错误
+
+    除数不确定时一定要考虑这个数有没有可能变化成0，对此要进行提前特殊处理
+2. #### 开方后整形精度丢失
+
+    判断`sqrt(x) * sqrt(x) == x`防止精度丢失造成的影响
+
+## C.
+
+一个典型的数组条件元素剔除的题目，双指针过程还是要多手动模拟一下快指针到达边际后慢指针与是否满足条件的检查处理，调试代码可以把过程存储在`vector`中做日志，在问题出现时方便溯源。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/Codeforces%20Round%201027%20%28Div.%203%29-wan-cheng-ti-mu-hui-gu.html</guid><pubDate>Fri, 30 May 2025 10:21:56 +0000</pubDate></item><item><title>移除一个点位后覆盖所有坐标的最小面积</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/yi-chu-yi-ge-dian-wei-hou-fu-gai-suo-you-zuo-biao-de-zui-xiao-mian-ji.html</link><description>## 题目大意：
 
 &gt; 在一个图（大小确定）中，给定`n`个坐标，要求可以移动一个坐标，输出能覆盖这些坐标的最小面积
 
