@@ -1,5 +1,60 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 30 May 2025 10:26:56 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>Codeforces Round 1027 (Div. 3)完成题目回顾</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/Codeforces%20Round%201027%20%28Div.%203%29-wan-cheng-ti-mu-hui-gu.html</link><description>[[Codeforces Round 1027 (Div. 3)](https://codeforces.com/contest/2114)](https://codeforces.com/contest/2114)完成题目回顾
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Sat, 31 May 2025 13:52:22 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>排序构造缺失元素的非负临项差数组</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/pai-xu-gou-zao-que-shi-yuan-su-de-fei-fu-lin-xiang-cha-shu-zu.html</link><description>https://codeforces.com/contest/2077/problem/A——题目链接
+## 题目大意:
+
+&gt; 给定一个长度为`2 * n`的数组，其顺序已经被打乱，并且缺失了一个数字，在顺序没有打乱且没有数字确实的情况下满足以下条件：
+&gt;
+&gt; 1. 没有相同的数字
+&gt; 2. `a1 = a2 - a3 + a4 - a5 + ...... + a(2*n) - a(2*n-1)`
+&gt; 3. 所有数字都是大于`1`的整数
+&gt;
+&gt; 要求按照已知的数字来构造一个符合条件的数组
+
+## 思路：
+
+- 可以根据条件2来构造这个数字，这个数字要符合没有相同数字的要求，为使过程尽量最简单，可以通过数学表达式构造比最大数大或比最小值小的数进行补位
+- 肯定要对式子进行排序了，有这个想法了，常见的就有两种：
+
+  1. 从大到小
+  2. 从小到大
+
+  本题不能存在负数，且有减法，直接从大到小秒了
+- 对条件2进行变形，想办法构造出最值，以此来避免重复
+
+  `a2 = a1 + (s3 - a4) + (a5 - a6) + ......(a2*n-1 - a2*n) + a2*n+1`
+
+  这里的`a1`就是那个已知的数组的最大值，`a2`就是要构造出的比最大值还大的值，输出结果时记得在第二位输出它就可以了
+
+## 代码：
+
+```cpp
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+#define int long long
+void solution() {
+    int n; cin &gt;&gt; n;
+    vector&lt;int&gt; res(2 * n + 1);
+    for(int i = 0; i &lt; 2 * n; i++) {
+        cin &gt;&gt; res[i + 1];
+    }
+    sort(res.begin() + 1, res.end(), [](int a, int b) {return a &gt; b;});
+    int ans = res[1] + res[2 * n];
+    for(int i = 2; i &lt; 2 * n - 1; i += 2) {
+        ans += res[i] - res[i + 1];
+    }
+
+    cout &lt;&lt; res[1] &lt;&lt; ' ' &lt;&lt; ans &lt;&lt; ' ';
+    for(int i = 2; i&lt; 2 * n + 1; i++) {
+        cout &lt;&lt; res[i] &lt;&lt; ' \n'[i == 2 * n];
+    }
+}
+
+signed main() {
+    int t; cin &gt;&gt; t;
+    while(t--) solution();
+    return 0;
+}
+```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/pai-xu-gou-zao-que-shi-yuan-su-de-fei-fu-lin-xiang-cha-shu-zu.html</guid><pubDate>Sat, 31 May 2025 13:51:52 +0000</pubDate></item><item><title>Codeforces Round 1027 (Div. 3)完成题目回顾</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/Codeforces%20Round%201027%20%28Div.%203%29-wan-cheng-ti-mu-hui-gu.html</link><description>[[Codeforces Round 1027 (Div. 3)](https://codeforces.com/contest/2114)](https://codeforces.com/contest/2114)完成题目回顾
 
 ## A.
 
