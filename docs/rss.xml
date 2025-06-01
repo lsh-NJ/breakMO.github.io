@@ -1,5 +1,77 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Sun, 01 Jun 2025 08:39:16 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>素数章节</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/su-shu-zhang-jie.html</link><description># 质数
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Sun, 01 Jun 2025 14:35:33 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>通过删除元素与调整元素构造最大公约数为1的数组</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/tong-guo-shan-chu-yuan-su-yu-diao-zheng-yuan-su-gou-zao-zui-da-gong-yue-shu-wei-1-de-shu-zu.html</link><description>跳转题目-&gt;[[D - Array and GCD](https://codeforces.com/contest/2104/problem/D)](https://codeforces.com/contest/2104/problem/D)
+
+## 题目大意:
+
+&gt; 给定一个数组，有以下定义：
+&gt;
+&gt; 1. 每个元素最小是2
+&gt; 2. 对于任意数组中的元素都满足最大公约数为1
+&gt;
+&gt; 这样的数组叫做完美数组，
+&gt;
+&gt; 现在可以对数组任意进行如下操作：
+&gt;
+&gt; 1. 初始有0个金币
+&gt; 2. 将一个数减少多少就获得多少个金币
+&gt; 3. 可以花费金币将数字等个数增大
+&gt;
+&gt; 如果以上操作无法使得数组变成完美数组，可以删除任意元素，最终输出的结果就是可以将数组转化为完美数组的最小删除数
+
+## 思路：
+
+1. 从任意操作中看出：数组的总和不能增大，只能减小（这一点我都没能想到😓）
+2. 因为任意元素最大公约数是1，所以所有的数都应该是素数，由条件1可知，数组的总和可以减小，也就是说可以通过判断当前数组长度下数组总和是否大于等于等个数的素数的总和
+3. 在一定范围内的素数的快速寻找可以用埃拉托斯特尼筛法，再由题目给定的数组长度范围为`4e5`，根据**质数分布与质数定理**，$p_{k}\approx k\cdot\ln k$，求出约等于`6e6`（向上取整）求得数组长度对应的相同数量的素数
+4. 删除操作应从最小值开始删，因为数组和在元素数量一定时要尽量大
+
+## 代码：
+
+```cpp
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int span = 6000000;
+vector&lt;long long&gt; prime;
+
+void solution() {
+    int n; cin &gt;&gt; n;
+    vector&lt;int&gt; a(n);
+    long long sum = 0;
+    for(int i = 0; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+        sum += a[i];
+    }
+    sort(a.begin(), a.end());
+    if(sum &gt;= prime[n - 1]) {
+        cout &lt;&lt; 0 &lt;&lt; endl;
+        return;
+    }
+
+    for(int i = 0; i &lt; n; i++) {
+        sum -= a[i];
+        if(sum &gt;= prime[n - i - 2]) {
+            cout &lt;&lt; i + 1 &lt;&lt; endl;
+            return;
+        }
+    }
+}
+int main() {
+    vector&lt;bool&gt; p(span, 1);
+    for(int i = 2; i &lt; span; i++) {
+        if(!p[i]) continue;
+        if(!prime.size()) {
+            prime.push_back(i);
+        }else
+            prime.push_back(i + prime.back());
+        for(int j = i; j &lt; span; j+= i) {
+            p[j] = 0;
+        }
+    }
+    int t; cin &gt;&gt; t;
+    while(t--) solution();
+    return 0;
+}
+```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/tong-guo-shan-chu-yuan-su-yu-diao-zheng-yuan-su-gou-zao-zui-da-gong-yue-shu-wei-1-de-shu-zu.html</guid><pubDate>Sun, 01 Jun 2025 14:35:04 +0000</pubDate></item><item><title>素数章节</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/su-shu-zhang-jie.html</link><description># 质数
 ## **质数分布与质数定理**
 
 质数定理（Prime Number Theorem, PNT）描述了质数在自然数中的分布密度：当自然数 $n$ 足够大时，不超过 $n$ 的质数个数 $\pi(n)$ 近似为 $\frac{n}{\ln n}$。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/su-shu-zhang-jie.html</guid><pubDate>Sun, 01 Jun 2025 08:38:46 +0000</pubDate></item><item><title>排序构造缺失元素的非负临项差数组</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/pai-xu-gou-zao-que-shi-yuan-su-de-fei-fu-lin-xiang-cha-shu-zu.html</link><description>https://codeforces.com/contest/2077/problem/A——题目链接
