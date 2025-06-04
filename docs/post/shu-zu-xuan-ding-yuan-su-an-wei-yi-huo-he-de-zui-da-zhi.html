@@ -10,7 +10,20 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="#include<bits/stdc++.h>
+<meta name="description" content="[跳转题目](https://codeforces.com/contest/2094/problem/E)
+## 题目大意：
+
+> 给定一个数组，数组长度为`n`，所有的元素不可能超过`n`，从数组中选定一个元素与所有的其他元素进行按位异或并加和，求这个和的最大值
+
+## 思路：
+
+1. 如果直接对所有元素进行按位异或并求和的操作复杂度太高，为O（n^2)
+2. 通过一番思考知道没有捷径可以直接找出那个能得出最大结果的值，所以过程肯定涉及暴力枚举，接下来要对复杂度进行优化
+3. 题目给定范围为`n < 2 ^ 30`，所以可以用一个空间为31的数组记录不同位上1的个数，那么之后的复杂度可以消减为O（30n）
+## 代码：
+
+```cpp
+#include<bits/stdc++.h>
 using namespace std;
 void solution() {
     int n; cin >> n;
@@ -44,9 +57,23 @@ int main() {
     int t; cin >> t;
     while(t--) solution();
     return 0;
-}。">
+}
+```。">
 <meta property="og:title" content="数组选定元素按位异或和的最大值">
-<meta property="og:description" content="#include<bits/stdc++.h>
+<meta property="og:description" content="[跳转题目](https://codeforces.com/contest/2094/problem/E)
+## 题目大意：
+
+> 给定一个数组，数组长度为`n`，所有的元素不可能超过`n`，从数组中选定一个元素与所有的其他元素进行按位异或并加和，求这个和的最大值
+
+## 思路：
+
+1. 如果直接对所有元素进行按位异或并求和的操作复杂度太高，为O（n^2)
+2. 通过一番思考知道没有捷径可以直接找出那个能得出最大结果的值，所以过程肯定涉及暴力枚举，接下来要对复杂度进行优化
+3. 题目给定范围为`n < 2 ^ 30`，所以可以用一个空间为31的数组记录不同位上1的个数，那么之后的复杂度可以消减为O（30n）
+## 代码：
+
+```cpp
+#include<bits/stdc++.h>
 using namespace std;
 void solution() {
     int n; cin >> n;
@@ -80,12 +107,13 @@ int main() {
     int t; cin >> t;
     while(t--) solution();
     return 0;
-}。">
+}
+```。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://lsh-NJ.github.io/breakMO.github.io/post/shu-zu-xuan-ding-yuan-su-an-wei-yi-huo-he-de-zui-da-zhi.html">
 <meta property="og:image" content="https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&rs=1&pid=ImgDetMain">
 <title>数组选定元素按位异或和的最大值</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -151,40 +179,53 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>#include&lt;bits/stdc++.h&gt;<br>
-using namespace std;<br>
-void solution() {<br>
-int n; cin &gt;&gt; n;<br>
-//分别记录二进制1相同位置1的数量和原数据<br>
-vector cnts(31, 0), a(n);</p>
-<pre class="notranslate"><code class="notranslate">for(int i = 0; i &lt; n; i++) {
-    cin &gt;&gt; a[i];
-    for(int j = 0; j &lt; 31; j++) {
-        if((a[i] &gt;&gt; j) &amp; 1) cnts[j]++;
+<div class="markdown-body" id="postBody"><p><a href="https://codeforces.com/contest/2094/problem/E" rel="nofollow">跳转题目</a></p>
+<h2>题目大意：</h2>
+<blockquote>
+<p>给定一个数组，数组长度为<code class="notranslate">n</code>，所有的元素不可能超过<code class="notranslate">n</code>，从数组中选定一个元素与所有的其他元素进行按位异或并加和，求这个和的最大值</p>
+</blockquote>
+<h2>思路：</h2>
+<ol>
+<li>如果直接对所有元素进行按位异或并求和的操作复杂度太高，为O（n^2)</li>
+<li>通过一番思考知道没有捷径可以直接找出那个能得出最大结果的值，所以过程肯定涉及暴力枚举，接下来要对复杂度进行优化</li>
+<li>题目给定范围为<code class="notranslate">n &lt; 2 ^ 30</code>，所以可以用一个空间为31的数组记录不同位上1的个数，那么之后的复杂度可以消减为O（30n）</li>
+</ol>
+<h2>代码：</h2>
+<div class="highlight highlight-source-c++"><pre class="notranslate">#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>bits/stdc++.h<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span>
+<span class="pl-k">void</span> <span class="pl-en">solution</span>() {
+    <span class="pl-k">int</span> n; cin &gt;&gt; n;
+    <span class="pl-c"><span class="pl-c">//</span>分别记录二进制1相同位置1的数量和原数据</span>
+    vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">cnts</span>(<span class="pl-c1">31</span>, <span class="pl-c1">0</span>), <span class="pl-c1">a</span>(n);
+
+    <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+        <span class="pl-k">for</span>(<span class="pl-k">int</span> j = <span class="pl-c1">0</span>; j &lt; <span class="pl-c1">31</span>; j++) {
+            <span class="pl-k">if</span>((a[i] &gt;&gt; j) &amp; <span class="pl-c1">1</span>) cnts[j]++;
+        }
     }
+
+    <span class="pl-k">long</span> <span class="pl-k">long</span> res = <span class="pl-c1">0</span>;
+    <span class="pl-c"><span class="pl-c">//</span>暴力遍历所有的数据取最大值</span>
+    <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; n; i++) {
+        <span class="pl-k">int</span> num = a[i];
+        <span class="pl-k">long</span> <span class="pl-k">long</span> sum = <span class="pl-c1">0</span>;
+        <span class="pl-k">for</span>(<span class="pl-k">int</span> j = <span class="pl-c1">0</span>; j &lt; <span class="pl-c1">31</span>; j++) {
+            <span class="pl-k">bool</span> tmp = (num &gt;&gt; j) &amp; <span class="pl-c1">1</span>;
+            <span class="pl-k">if</span>(tmp) sum += (n - cnts[j]) * <span class="pl-c1">pow</span>(<span class="pl-c1">2</span>, j);
+            <span class="pl-k">else</span> sum += (cnts[j]) * <span class="pl-c1">pow</span>(<span class="pl-c1">2</span>, j);
+        }
+        res = <span class="pl-c1">max</span>(res, sum);
+    }
+
+    cout &lt;&lt; res &lt;&lt; endl;
 }
 
-long long res = 0;
-//暴力遍历所有的数据取最大值
-for(int i = 0; i &lt; n; i++) {
-    int num = a[i];
-    long long sum = 0;
-    for(int j = 0; j &lt; 31; j++) {
-        bool tmp = (num &gt;&gt; j) &amp; 1;
-        if(tmp) sum += (n - cnts[j]) * pow(2, j);
-        else sum += (cnts[j]) * pow(2, j);
-    }
-    res = max(res, sum);
-}
-
-cout &lt;&lt; res &lt;&lt; endl;
-</code></pre>
-<p>}</p>
-<p>int main() {<br>
-int t; cin &gt;&gt; t;<br>
-while(t--) solution();<br>
-return 0;<br>
-}</p></div>
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+    <span class="pl-k">int</span> t; cin &gt;&gt; t;
+    <span class="pl-k">while</span>(t--) <span class="pl-c1">solution</span>();
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>

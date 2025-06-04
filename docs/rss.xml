@@ -1,5 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Wed, 04 Jun 2025 08:04:25 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>数组选定元素按位异或和的最大值</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/shu-zu-xuan-ding-yuan-su-an-wei-yi-huo-he-de-zui-da-zhi.html</link><description>#include&lt;bits/stdc++.h&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Wed, 04 Jun 2025 08:08:09 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>数组选定元素按位异或和的最大值</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/shu-zu-xuan-ding-yuan-su-an-wei-yi-huo-he-de-zui-da-zhi.html</link><description>[跳转题目](https://codeforces.com/contest/2094/problem/E)
+## 题目大意：
+
+&gt; 给定一个数组，数组长度为`n`，所有的元素不可能超过`n`，从数组中选定一个元素与所有的其他元素进行按位异或并加和，求这个和的最大值
+
+## 思路：
+
+1. 如果直接对所有元素进行按位异或并求和的操作复杂度太高，为O（n^2)
+2. 通过一番思考知道没有捷径可以直接找出那个能得出最大结果的值，所以过程肯定涉及暴力枚举，接下来要对复杂度进行优化
+3. 题目给定范围为`n &lt; 2 ^ 30`，所以可以用一个空间为31的数组记录不同位上1的个数，那么之后的复杂度可以消减为O（30n）
+## 代码：
+
+```cpp
+#include&lt;bits/stdc++.h&gt;
 using namespace std;
 void solution() {
     int n; cin &gt;&gt; n;
@@ -33,7 +46,8 @@ int main() {
     int t; cin &gt;&gt; t;
     while(t--) solution();
     return 0;
-}。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/shu-zu-xuan-ding-yuan-su-an-wei-yi-huo-he-de-zui-da-zhi.html</guid><pubDate>Wed, 04 Jun 2025 08:03:57 +0000</pubDate></item><item><title>2025/6/1周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-6-1-zhou-ji.html</link><description>感觉校队悬了，一看他们全都是蓝二，这下看懂了，我不该选Java方向的，暴力比C++要求高的多，语言效率太低了，当时手撕最小生成树竟然结果的输出没来及改，要是校队卡我简历那我没什么好说的了
+}
+```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/shu-zu-xuan-ding-yuan-su-an-wei-yi-huo-he-de-zui-da-zhi.html</guid><pubDate>Wed, 04 Jun 2025 08:03:57 +0000</pubDate></item><item><title>2025/6/1周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-6-1-zhou-ji.html</link><description>感觉校队悬了，一看他们全都是蓝二，这下看懂了，我不该选Java方向的，暴力比C++要求高的多，语言效率太低了，当时手撕最小生成树竟然结果的输出没来及改，要是校队卡我简历那我没什么好说的了
 
 还是难好好复习，即使是期末月了，我怕我不能今年进校队会后悔一辈子。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/2025-6-1-zhou-ji.html</guid><pubDate>Sun, 01 Jun 2025 14:48:47 +0000</pubDate></item><item><title>通过删除元素与调整元素构造最大公约数为1的数组</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/tong-guo-shan-chu-yuan-su-yu-diao-zheng-yuan-su-gou-zao-zui-da-gong-yue-shu-wei-1-de-shu-zu.html</link><description>跳转题目-&gt;[[D - Array and GCD](https://codeforces.com/contest/2104/problem/D)](https://codeforces.com/contest/2104/problem/D)
 
