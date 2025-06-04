@@ -1,5 +1,39 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Sun, 01 Jun 2025 14:49:13 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>2025/6/1周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-6-1-zhou-ji.html</link><description>感觉校队悬了，一看他们全都是蓝二，这下看懂了，我不该选Java方向的，暴力比C++要求高的多，语言效率太低了，当时手撕最小生成树竟然结果的输出没来及改，要是校队卡我简历那我没什么好说的了
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Wed, 04 Jun 2025 08:04:25 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>数组选定元素按位异或和的最大值</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/shu-zu-xuan-ding-yuan-su-an-wei-yi-huo-he-de-zui-da-zhi.html</link><description>#include&lt;bits/stdc++.h&gt;
+using namespace std;
+void solution() {
+    int n; cin &gt;&gt; n;
+    //分别记录二进制1相同位置1的数量和原数据
+    vector&lt;int&gt; cnts(31, 0), a(n);
+
+    for(int i = 0; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+        for(int j = 0; j &lt; 31; j++) {
+            if((a[i] &gt;&gt; j) &amp; 1) cnts[j]++;
+        }
+    }
+
+    long long res = 0;
+    //暴力遍历所有的数据取最大值
+    for(int i = 0; i &lt; n; i++) {
+        int num = a[i];
+        long long sum = 0;
+        for(int j = 0; j &lt; 31; j++) {
+            bool tmp = (num &gt;&gt; j) &amp; 1;
+            if(tmp) sum += (n - cnts[j]) * pow(2, j);
+            else sum += (cnts[j]) * pow(2, j);
+        }
+        res = max(res, sum);
+    }
+
+    cout &lt;&lt; res &lt;&lt; endl;
+}
+
+int main() {
+    int t; cin &gt;&gt; t;
+    while(t--) solution();
+    return 0;
+}。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/shu-zu-xuan-ding-yuan-su-an-wei-yi-huo-he-de-zui-da-zhi.html</guid><pubDate>Wed, 04 Jun 2025 08:03:57 +0000</pubDate></item><item><title>2025/6/1周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-6-1-zhou-ji.html</link><description>感觉校队悬了，一看他们全都是蓝二，这下看懂了，我不该选Java方向的，暴力比C++要求高的多，语言效率太低了，当时手撕最小生成树竟然结果的输出没来及改，要是校队卡我简历那我没什么好说的了
 
 还是难好好复习，即使是期末月了，我怕我不能今年进校队会后悔一辈子。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/2025-6-1-zhou-ji.html</guid><pubDate>Sun, 01 Jun 2025 14:48:47 +0000</pubDate></item><item><title>通过删除元素与调整元素构造最大公约数为1的数组</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/tong-guo-shan-chu-yuan-su-yu-diao-zheng-yuan-su-gou-zao-zui-da-gong-yue-shu-wei-1-de-shu-zu.html</link><description>跳转题目-&gt;[[D - Array and GCD](https://codeforces.com/contest/2104/problem/D)](https://codeforces.com/contest/2104/problem/D)
 
