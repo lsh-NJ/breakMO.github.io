@@ -123,12 +123,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">p</span>(n + <span class="pl-c1">1</span>), <span class="pl-c1">index</span>(n + <span class="pl-c1">1</span>);
     <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">1</span>; i &lt;= n; i++) {
         cin &gt;&gt; p[i];
-        <span class="pl-c1">index</span>[p[i]] = i;
+        index[p[i]] = i;
     }
     <span class="pl-k">while</span>(q--) {
         <span class="pl-k">int</span> l, r, k; cin &gt;&gt; l &gt;&gt; r &gt;&gt; k;
         <span class="pl-c"><span class="pl-c">//</span>判断不成立：</span>
-        <span class="pl-k">if</span>(<span class="pl-c1">index</span>[k] &gt; r || <span class="pl-c1">index</span>[k] &lt; l) {
+        <span class="pl-k">if</span>(index[k] &gt; r || index[k] &lt; l) {
             cout &lt;&lt; -<span class="pl-c1">1</span> &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span> <span class="pl-cce">\n</span><span class="pl-pds">"</span></span>[q == <span class="pl-c1">0</span>];
             <span class="pl-k">continue</span>;
         }
@@ -136,7 +136,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         <span class="pl-c"><span class="pl-c">//</span>模拟二分过程</span>
         <span class="pl-k">int</span> needbig = <span class="pl-c1">0</span>, needsmall = <span class="pl-c1">0</span>;<span class="pl-c"><span class="pl-c">//</span>在二分的过程中记录需要调整为大数和调整为小的的数字的数量</span>
         <span class="pl-k">int</span> bigAll = n - k, smallAll = k - <span class="pl-c1">1</span>;<span class="pl-c"><span class="pl-c">//</span>记录应该小于和应该大于的数的数量，如果小于0就-1</span>
-        <span class="pl-k">int</span> left = l, right = r, in = <span class="pl-c1">index</span>[k];
+        <span class="pl-k">int</span> left = l, right = r, in = index[k];
         <span class="pl-k">while</span>(left &lt;= right) {
             <span class="pl-k">int</span> mid = (right + left) / <span class="pl-c1">2</span>;
             <span class="pl-k">if</span>(p[mid] == k) <span class="pl-k">break</span>;
