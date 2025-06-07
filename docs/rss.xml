@@ -1,5 +1,74 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Thu, 05 Jun 2025 12:22:55 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>双数组局部以2为底交叉位置幂最大和</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/shuang-shu-zu-ju-bu-yi-2-wei-di-jiao-cha-wei-zhi-mi-zui-da-he.html</link><description>[[跳转题目](https://codeforces.com/contest/2116/problem/B)](https://codeforces.com/contest/2116/problem/B)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Sat, 07 Jun 2025 07:07:29 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>通过取最大公约数取得使数组元素相同的最快步数</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/tong-guo-qu-zui-da-gong-yue-shu-qu-de-shi-shu-zu-yuan-su-xiang-tong-de-zui-kuai-bu-shu.html</link><description>[[跳转题目](https://codeforces.com/contest/2116/problem/C)](https://codeforces.com/contest/2116/problem/C)
+
+## 题目大意：
+
+&gt; 给定一个数组，可以进行如下操作，选定两个元素，使其中一个元素变为这两个元素的最大公约数，问，最少通过多少次操作可以使数组中的所有元素变为相同的值
+
+# 思路：
+
+1. 先通过预处理快速得出所有要用到的最大公约数
+2. 所有数的最大公约数gcd(a1,a2,…,an)就是数组所有元素的最终值
+3. 如果数组中已经存在一个元素等于gcd(a1,a2,…,an)，那么操作数就是数组长度减一了
+4. 如果不存在，就要找一个使gcd(a1,a2,…,an)出现的最少的操作数，可以采用动态规划来完成
+
+## 新知/问题：
+
+- 如何**&lt;u&gt;*找到最少的操作数使得数组中的一个元素变为数组中的所有数的的最大公约数*&lt;/u&gt;**？怎样进行动态规划？
+
+  1. 将数组中的所有数变为最大公约数的倍数，这样以来变成最大公约数就相当于数组元素变为1了
+  2. 使用一个范围很大的数组（动规数组）存储接下来的操作数，初始化为一个较大的数
+  3. 进行两层循环，第一层循环（看作gcd的左操作数）从最大的倍数开始一直到1，即是到最大公约数，第二层循环（看作gcd的右操作数）遍历所有数组元素，这个过程就在模拟对所有元素进行求最大公约数的过程
+  4. 其动态规划的核心在于左右操作数的最大公约数记录为动规数组的左操作数加一
+- 对数组的多次初始化操作建议用`assigh`， `resize`会出问题，它适用于长度变化的情况，不变就初始化不了
+
+## 代码：
+
+```cpp
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+const int Max = 5005;
+vector&lt;vector&lt;int&gt;&gt; g(Max, vector&lt;int&gt; (Max));
+vector&lt;int&gt; f;
+void solution() {
+    f.resize(Max, Max);
+    int n; cin &gt;&gt; n;
+    vector&lt;int&gt; a(n);
+    //同时记录所有数的最大公约数
+    int sg = 0;
+    for(int i = 0; i &lt; n; i++) {
+        cin &gt;&gt; a[i];
+        sg = g[sg][a[i]];
+    }
+    //获得sg的最小操作数查找
+    //将所有数组元素改为sg的倍数的同时记录sg的最大倍数
+    int m = 0;
+    for(int i = 0; i &lt; n; i++) {
+        a[i] /= sg;
+        m = max(m, a[i]);
+        f[a[i]] = 0;
+    }
+    for(int x = m; x &gt; 0; x--) for(int j = 0; j &lt; n; j++) {
+        int y = a[j];
+        f[g[x][y]] = min(f[g[x][y]], f[x] + 1);
+    }
+    //这里的两个max分别对应找出的sg和本就存在的sg，警醒自己对不同的情况一定要仔细进行讨论代码的具体实现
+    int res = max(f[1] - 1, 0);
+    for(int i = 0; i &lt; n; i++) {
+        if(a[i] != 1) res++;
+    }
+    cout &lt;&lt; res &lt;&lt; endl;
+    f.clear();
+}
+
+int main() {
+    for(int i = 0; i &lt; Max; i++) g[i][0] = g[0][i] = g[i][i] = i;
+    for(int i = 1; i &lt; Max; i++) for(int j = 1; j &lt; i; j++) g[i][j] = g[j][i] = g[j][i % j];
+    int t; cin &gt;&gt; t;
+    while(t--) solution();
+    return 0;
+} 
+```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/tong-guo-qu-zui-da-gong-yue-shu-qu-de-shi-shu-zu-yuan-su-xiang-tong-de-zui-kuai-bu-shu.html</guid><pubDate>Sat, 07 Jun 2025 07:07:02 +0000</pubDate></item><item><title>双数组局部以2为底交叉位置幂最大和</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/shuang-shu-zu-ju-bu-yi-2-wei-di-jiao-cha-wei-zhi-mi-zui-da-he.html</link><description>[[跳转题目](https://codeforces.com/contest/2116/problem/B)](https://codeforces.com/contest/2116/problem/B)
 
 ## 题目大意：
 
