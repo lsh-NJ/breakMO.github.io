@@ -1,5 +1,16 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Sat, 07 Jun 2025 07:07:29 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>通过取最大公约数取得使数组元素相同的最快步数</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/tong-guo-qu-zui-da-gong-yue-shu-qu-de-shi-shu-zu-yuan-su-xiang-tong-de-zui-kuai-bu-shu.html</link><description>[[跳转题目](https://codeforces.com/contest/2116/problem/C)](https://codeforces.com/contest/2116/problem/C)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Sat, 07 Jun 2025 09:35:16 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>最大交叉和与二叉树（😨）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/zui-da-jiao-cha-he-yu-er-cha-shu-%EF%BC%88%F0%9F%98%A8%EF%BC%89.html</link><description>[[跳转题目](https://codeforces.com/problemset/problem/2114/E)](https://codeforces.com/problemset/problem/2114/E)
+
+## 题目大意：
+
+&gt; 给定一个二叉树，每个节点都有一个值，要求求出每个节点的最大交错和的值
+&gt; 交错和差：`a[i] - a[parent[i]] + a[parent[...]-...`，当然，可以不包括父节点，`a[i]`本身也要考虑
+
+## 思路：
+
+- 最大交叉和可以以这样的思路进行：
+
+  `max(该节点的值，该节点的值减去父节点的记录最小值)`，而其中的父节点的最小值是`min(该节点的值，该节点的值减去父节点的记录最大值)`。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/zui-da-jiao-cha-he-yu-er-cha-shu-%EF%BC%88%F0%9F%98%A8%EF%BC%89.html</guid><pubDate>Sat, 07 Jun 2025 09:34:48 +0000</pubDate></item><item><title>通过取最大公约数取得使数组元素相同的最快步数</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/tong-guo-qu-zui-da-gong-yue-shu-qu-de-shi-shu-zu-yuan-su-xiang-tong-de-zui-kuai-bu-shu.html</link><description>[[跳转题目](https://codeforces.com/contest/2116/problem/C)](https://codeforces.com/contest/2116/problem/C)
 
 ## 题目大意：
 
