@@ -1,5 +1,53 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Tue, 10 Jun 2025 11:06:50 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>双向距离最短的位置</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/shuang-xiang-ju-li-zui-duan-de-wei-zhi.html</link><description>[[跳转题目](https://codeforces.com/contest/2098/problem/B)](https://codeforces.com/contest/2098/problem/B)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Tue, 10 Jun 2025 12:52:52 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>欧式距离与曼哈顿距离相等的点的个数（简单分析规律然后递归拆分）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/ou-shi-ju-li-yu-man-ha-dun-ju-li-xiang-deng-de-dian-de-ge-shu-%EF%BC%88-jian-dan-fen-xi-gui-lv-ran-hou-di-gui-chai-fen-%EF%BC%89.html</link><description>[[跳转题目](https://codeforces.com/problemset/problem/2072/E)](https://codeforces.com/problemset/problem/2072/E)
+
+## 思路：
+
+1. 假设有一排n个点，发现这n个点可以组成`n * (n - 1) / 2`对符合条件的组合，要组成`k`对，找一个最接近`k`的`n`来创建`n`个点，然后再对剩下的部分进行相同的操作，该过程可以递归进行，终止条件是参数`k`被削减为0
+
+## 思维的桎梏：
+
+1. 发现了一排点的规律，但是没有想到可以`y + 1`之后继续这个过程
+2. 这是一个很经典的“递归拆分”问题，但我却卡在了拆分的起始点，我想的只有象限的四象限，而没有空间的无限延伸
+
+## 代码：
+
+```cpp
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+vector&lt;pair&lt;int,int&gt;&gt; res;
+//通过对数构造一行点位
+void creat(int num, int x, int y) {
+    if(num == 0) return;
+    int k = 2;//需要的点数
+    while((k * (k - 1) / 2) &lt;= num) {
+        k++;
+    }
+    k--;//需要的点数
+    int tmp = k * (k - 1) / 2;
+    for(int i = 1; i &lt;= k; i++) {
+        res.push_back({x + i, y});
+    }
+    creat(num - tmp, x + k, y + 1);
+}
+
+void solution() {
+    int k; cin &gt;&gt; k;
+    creat(k,0, 0);
+    cout &lt;&lt; res.size() &lt;&lt; endl;
+    for(auto&amp; p:res) {
+        cout &lt;&lt; p.first &lt;&lt; ' ' &lt;&lt; p.second &lt;&lt; endl;
+    }
+    res.clear();
+}
+
+int main() {
+
+    int t; cin &gt;&gt; t;
+    while(t--) solution();
+    return 0;
+}
+```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/ou-shi-ju-li-yu-man-ha-dun-ju-li-xiang-deng-de-dian-de-ge-shu-%EF%BC%88-jian-dan-fen-xi-gui-lv-ran-hou-di-gui-chai-fen-%EF%BC%89.html</guid><pubDate>Tue, 10 Jun 2025 12:52:22 +0000</pubDate></item><item><title>双向距离最短的位置</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/shuang-xiang-ju-li-zui-duan-de-wei-zhi.html</link><description>[[跳转题目](https://codeforces.com/contest/2098/problem/B)](https://codeforces.com/contest/2098/problem/B)
 
 萨沙想在一条街道上购买一套公寓，这条街上的房屋从左到右编号为1到$10^9$。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/shuang-xiang-ju-li-zui-duan-de-wei-zhi.html</guid><pubDate>Tue, 10 Jun 2025 11:06:23 +0000</pubDate></item><item><title>完全包含上一段数组元素切割的最大切割数</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/wan-quan-bao-han-shang-yi-duan-shu-zu-yuan-su-qie-ge-de-zui-da-qie-ge-shu.html</link><description>[[跳转题目](https://codeforces.com/contest/2117/problem/C)](https://codeforces.com/contest/2117/problem/C)
 
