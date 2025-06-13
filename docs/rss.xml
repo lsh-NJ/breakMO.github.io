@@ -1,5 +1,64 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Tue, 10 Jun 2025 13:02:28 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>两种操作下使数组变成0的可能性（二分与数学经典）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/liang-zhong-cao-zuo-xia-shi-shu-zu-bian-cheng-0-de-ke-neng-xing-%EF%BC%88-er-fen-yu-shu-xue-jing-dian-%EF%BC%89.html</link><description>[[题目链接](https://codeforces.com/contest/2117/problem/D)](https://codeforces.com/contest/2117/problem/D)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 13 Jun 2025 12:54:37 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>构造行列均为全排列的n*n矩阵</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/gou-zao-xing-lie-jun-wei-quan-pai-lie-de-n-n-ju-zhen.html</link><description>[[跳转题目](https://codeforces.com/contest/2118/problem/B)](https://codeforces.com/contest/2118/problem/B)
+
+## 思路：
+
+1. 要想构造一个排列皆为全排列的`n * n`矩阵，考虑使其变成循环的形式：
+
+    &gt; 1 2 3 4
+    &gt;
+    &gt; 2 3 4 1
+    &gt;
+    &gt; 3 4 1 2
+    &gt;
+    &gt; 4 1 2 3
+    &gt;
+2. 该如何通过反转构造出这样的矩阵呢？
+
+    不好构造，想一想类似的更容易构造的循环形式
+
+    &gt; 1 4 3 2
+    &gt;
+    &gt; 2 1 4 3
+    &gt;
+    &gt; 3 2 1 4
+    &gt;
+    &gt; 4 3 2 1
+    &gt;
+
+    （话说简单试一试就能试出来好吧？一个小时没发现这样的构造有点糖了吧？）
+
+    按照层序递进的进行反转（`swap(1, i);swap(i + 1, n)`）可以看出是一种逆序的循环，可以满足`2n`操作数要求
+
+## 代码:
+
+```cpp
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+
+void work() {
+    int n; cin &gt;&gt; n;
+    vector&lt;vector&lt;int&gt;&gt; res;
+    for(int i = 1; i &lt;= n; i++) {
+        if(1 &lt; i) {
+            res.push_back({i, 1, i});
+        }
+        if(i + 1 &lt; n) {
+            res.push_back({i, i + 1, n});
+        }
+    }
+    cout &lt;&lt; res.size() &lt;&lt;endl;
+    for(vector&lt;int&gt; r : res) {
+        cout &lt;&lt; r[0] &lt;&lt; ' ' &lt;&lt; r[1] &lt;&lt; ' ' &lt;&lt; r[2] &lt;&lt; endl;
+    }
+}
+
+int main() {
+    int t; cin &gt;&gt; t;
+    while(t--) work();
+    return 0;
+}
+```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/gou-zao-xing-lie-jun-wei-quan-pai-lie-de-n-n-ju-zhen.html</guid><pubDate>Fri, 13 Jun 2025 12:54:12 +0000</pubDate></item><item><title>两种操作下使数组变成0的可能性（二分与数学经典）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/liang-zhong-cao-zuo-xia-shi-shu-zu-bian-cheng-0-de-ke-neng-xing-%EF%BC%88-er-fen-yu-shu-xue-jing-dian-%EF%BC%89.html</link><description>[[题目链接](https://codeforces.com/contest/2117/problem/D)](https://codeforces.com/contest/2117/problem/D)
 
 ## 思路：
 
