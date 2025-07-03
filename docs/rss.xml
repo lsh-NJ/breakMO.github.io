@@ -1,5 +1,49 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Thu, 03 Jul 2025 06:19:34 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>2025/7/3周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-7-3-zhou-ji.html</link><description>&lt;sub&gt;这是一篇迟到的周记……&lt;/sub&gt;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Thu, 03 Jul 2025 09:04:25 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>组合购买折扣（二分做法）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/zu-he-gou-mai-zhe-kou-%EF%BC%88-er-fen-zuo-fa-%EF%BC%89.html</link><description>[[C - Action Figures](https://codeforces.com/contest/2026/problem/C)](https://codeforces.com/contest/2026/problem/C)
+
+#### 如何使用二分法暴力解决问题？
+
+1. 本质上是解决暴力寻找在满足条件的前提下的最值问题
+
+    ```cpp
+    	int l = 1;
+        int r = count_1 + 1;
+        while(r - l &gt; 1)
+        {
+            int mid = (l + r) / 2;
+            if(can(s, mid))//判断是否符合条件
+                l = mid;
+            else
+                r = mid;
+        }
+    ```
+
+#### 本题要满足的条件：
+
+1. k值一定时，有没有足够的组合物
+
+    ```cpp
+    bool can(const string&amp; s, int k)
+    {
+        int n = s.size();
+        vector&lt;int&gt; used(n);
+        for(int i = n - 1; i &gt;= 0; i--)
+            if(k &gt; 0 &amp;&amp; s[i] == '1')
+            {
+                used[i] = 1;
+                k--;
+            }
+        int cur = 0;
+        for(int i = 0; i &lt; n; i++)
+            if(used[i])
+            {
+                cur--;
+                if(cur &lt; 0) return false;
+            }
+            else cur++;
+        return true;
+    } 
+    ```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/zu-he-gou-mai-zhe-kou-%EF%BC%88-er-fen-zuo-fa-%EF%BC%89.html</guid><pubDate>Thu, 03 Jul 2025 09:03:55 +0000</pubDate></item><item><title>2025/7/3周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-7-3-zhou-ji.html</link><description>&lt;sub&gt;这是一篇迟到的周记……&lt;/sub&gt;
 
 	完成了期末周考试，终于闲下来了。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/2025-7-3-zhou-ji.html</guid><pubDate>Thu, 03 Jul 2025 06:19:06 +0000</pubDate></item><item><title>交互猜测二进制字符串</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/jiao-hu-cai-ce-er-jin-zhi-zi-fu-chuan.html</link><description>[[C - Password Cracking](https://codeforces.com/contest/2013/problem/C)](https://codeforces.com/contest/2013/problem/C)
 
