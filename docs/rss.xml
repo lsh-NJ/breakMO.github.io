@@ -1,5 +1,72 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Mon, 23 Jun 2025 11:52:40 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>2025/6/22周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-6-22-zhou-ji.html</link><description>期末周尽力了。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/2025-6-22-zhou-ji.html</guid><pubDate>Mon, 23 Jun 2025 11:52:16 +0000</pubDate></item><item><title>矩阵中消耗最小的区域（二维前缀和）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/ju-zhen-zhong-xiao-hao-zui-xiao-de-qu-yu-%EF%BC%88-er-wei-qian-zhui-he-%EF%BC%89.html</link><description>[[跳转题目](https://codeforces.com/contest/2113/problem/C)](https://codeforces.com/contest/2113/problem/C)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Thu, 03 Jul 2025 06:12:37 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>交互猜测二进制字符串</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/jiao-hu-cai-ce-er-jin-zhi-zi-fu-chuan.html</link><description>[[C - Password Cracking](https://codeforces.com/contest/2013/problem/C)](https://codeforces.com/contest/2013/problem/C)
+
+## 关键点：
+
+1. 先确定一个字符，再向右扩展，向左扩展，向右询问两次因为要找到后缀，向左不需要，只要长度够就可以了
+2. bug：
+
+    - 在长度为1的情况下违反题目描述中的长度限制
+    - 向右拓展的过程中如果子串不仅仅是后缀，而且是完整字符，判断的过程也会违反长度限制
+
+## 代码：
+
+```cpp
+#include&lt;bits/stdc++.h&gt;
+using namespace std;
+//4
+//0100
+int main() {
+    int t; cin &gt;&gt; t;
+    while(t--) {
+        int n; cin &gt;&gt; n;
+        bool in;
+        string res = '0';
+        //第一次操作：
+        cout &lt;&lt; '? ' &lt;&lt; res &lt;&lt; endl;
+        cin &gt;&gt; in;
+        if(!in) res = '1';
+        if(n == 1) {
+            cout &lt;&lt; '! ' &lt;&lt; res &lt;&lt; endl;
+            continue;
+        }
+        //检查后缀
+        bool zero, one;
+        while(1) {
+
+            cout &lt;&lt; '? ' &lt;&lt; res &lt;&lt; '0' &lt;&lt; endl;
+            cin &gt;&gt; zero;
+
+            cout &lt;&lt; '? ' &lt;&lt; res &lt;&lt; '1' &lt;&lt; endl;
+            cin &gt;&gt; one;
+
+            if((!zero &amp;&amp; !one)) {
+                break;
+            }
+            else if(zero) {
+                res += '0';
+            }
+            else res += '1';
+            if(res.size() == n) break;
+        }
+        int size = res.size();
+        while(size &lt; n) {
+
+            cout &lt;&lt; '? ' &lt;&lt; '0' &lt;&lt; res  &lt;&lt; endl;
+            cin &gt;&gt; zero;
+
+            if(zero) {
+                res = '0' + res;
+            }
+            else res = '1' + res;
+            size++;
+        }
+
+        cout &lt;&lt; '! ' &lt;&lt; res &lt;&lt; endl;
+        cout.flush();
+    }
+}
+```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/jiao-hu-cai-ce-er-jin-zhi-zi-fu-chuan.html</guid><pubDate>Thu, 03 Jul 2025 06:12:11 +0000</pubDate></item><item><title>2025/6/22周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-6-22-zhou-ji.html</link><description>期末周尽力了。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/2025-6-22-zhou-ji.html</guid><pubDate>Mon, 23 Jun 2025 11:52:16 +0000</pubDate></item><item><title>矩阵中消耗最小的区域（二维前缀和）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/ju-zhen-zhong-xiao-hao-zui-xiao-de-qu-yu-%EF%BC%88-er-wei-qian-zhui-he-%EF%BC%89.html</link><description>[[跳转题目](https://codeforces.com/contest/2113/problem/C)](https://codeforces.com/contest/2113/problem/C)
 
 ## 思路:
 
