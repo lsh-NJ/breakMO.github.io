@@ -1,5 +1,26 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Thu, 03 Jul 2025 12:54:15 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>数组减有限次数固定的数取绝对值的归零</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/shu-zu-jian-you-xian-ci-shu-gu-ding-de-shu-qu-jue-dui-zhi-de-gui-ling.html</link><description>[[C - Turtle and Good Pairs](https://codeforces.com/contest/2003/problem/C)](https://codeforces.com/contest/2003/problem/C)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 04 Jul 2025 03:31:50 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>bitwiseOR运算——相邻两位按位或为给定值的最长数组</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/bitwiseOR-yun-suan-%E2%80%94%E2%80%94-xiang-lin-liang-wei-an-wei-huo-wei-gei-ding-zhi-de-zui-chang-shu-zu.html</link><description># [[1988C - Increasing Sequence with Fixed OR](https://codeforces.com/problemset/problem/1988/C)](https://codeforces.com/problemset/problem/1988/C)
+
+- C++的`long long`类型可以接受最多**&lt;u&gt;63&lt;/u&gt;**次`&lt;&lt;`运算！！！
+- 对$2^{n}$进行移位运算时1要是`long long`类型，防止数值循环导致错误
+- `1 &lt;&lt; -1`虽然未定义，但可以认为结果是0
+
+#### 解题：
+
+- 第一个数不能占用最高位
+- 每相邻的两个数`|`，意味着`n`的每个二进制1至少需要一个数具有，且要满足递增的条件，可以想到对n的所有二进制1进行挖空，要使符合要求的数组最长，每次只挖一个空可以使得梯度最小
+
+  且需要注意当n为$2^{n}$时挖空会得到不是正整数的0，因此要`(x != n)`避免这种情况
+
+  ```cpp
+  	vector&lt;long long&gt; res;
+          for(int i = 62; i &gt;= -1; i--) {
+              long long x = (long long)1 &lt;&lt; i;
+              if((x &amp; n) == x &amp;&amp; (x != n)) {
+                  res.push_back(n - x);
+              }
+          }
+  ```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/bitwiseOR-yun-suan-%E2%80%94%E2%80%94-xiang-lin-liang-wei-an-wei-huo-wei-gei-ding-zhi-de-zui-chang-shu-zu.html</guid><pubDate>Fri, 04 Jul 2025 03:31:25 +0000</pubDate></item><item><title>数组减有限次数固定的数取绝对值的归零</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/shu-zu-jian-you-xian-ci-shu-gu-ding-de-shu-qu-jue-dui-zhi-de-gui-ling.html</link><description>[[C - Turtle and Good Pairs](https://codeforces.com/contest/2003/problem/C)](https://codeforces.com/contest/2003/problem/C)
 
 #### 新知：
 
