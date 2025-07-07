@@ -108,7 +108,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </li>
 <li>
 <p>记录两个最值，遍历所有的坐标尝试将其剔除：将坐标与最值比较，若等于最值，就取第二个最值，具体过程通过绘图模拟感受，圈住的是要剔除的点。</p>
-<p><a target="_blank" rel="noopener noreferrer" href="assets/2114D-20250530175448-h0hrswu.png"><img src="assets/2114D-20250530175448-h0hrswu.png" alt="2114D" style="max-width: 100%; height: auto;"></a></p>
+<p><a target="_blank" rel="noopener noreferrer" href="assets/2114D-20250530175448-h0hrswu.png"><img src="assets/2114D-20250530175448-h0hrswu.png" alt="2114D" style="max-width: 100%;"></a></p>
 </li>
 <li>
 <p>前一步是对点进行剔除，但具体操作是移动，那么就还要找位置放下这个被剔除的坐标，如果覆盖面积大于<code class="notranslate">n - 1</code>就表明一定有位置放下这个坐标，反之就要对<code class="notranslate">x + 1</code>或者<code class="notranslate">y + 1</code>取最小值</p>
