@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Mon, 07 Jul 2025 09:17:37 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>n条给定长度的边能否链接两个点</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/n-tiao-gei-ding-chang-du-de-bian-neng-fou-lian-jie-liang-ge-dian.html</link><description># [[ B - Line Segments](https://codeforces.com/contest/2119/problem/B)](https://codeforces.com/contest/2119/problem/B)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Mon, 07 Jul 2025 10:29:52 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>按位异或与按位与结果相同的最小字典序数组</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/an-wei-yi-huo-yu-an-wei-yu-jie-guo-xiang-tong-de-zui-xiao-zi-dian-xu-shu-zu.html</link><description># [[C - A Good 问题](https://codeforces.com/contest/2119/problem/C)](https://codeforces.com/contest/2119/problem/C)
+
+# 关键：
+
+- 按位与的结果与按位异或的结果相同，需要考虑两者的特性（对于每一个二进制位）：
+
+  1. 按位与有0结果就是0
+  2. 按位异或看1的数量，奇数个就是1，偶数个就是0
+- 对于数组的长度为奇数，为让字典序最小，可以让所有数都相同且等于左边界，此时满足条件。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/an-wei-yi-huo-yu-an-wei-yu-jie-guo-xiang-tong-de-zui-xiao-zi-dian-xu-shu-zu.html</guid><pubDate>Mon, 07 Jul 2025 10:29:21 +0000</pubDate></item><item><title>n条给定长度的边能否链接两个点</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/n-tiao-gei-ding-chang-du-de-bian-neng-fou-lian-jie-liang-ge-dian.html</link><description># [[ B - Line Segments](https://codeforces.com/contest/2119/problem/B)](https://codeforces.com/contest/2119/problem/B)
 
 # 关键：
 
