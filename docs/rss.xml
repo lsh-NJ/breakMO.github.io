@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Mon, 07 Jul 2025 07:59:01 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>加1与异或1</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/jia-1-yu-yi-huo-1.html</link><description># [[ A - Add or XOR](https://codeforces.com/contest/2119/problem/A)](https://codeforces.com/contest/2119/problem/A)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Mon, 07 Jul 2025 09:17:37 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>n条给定长度的边能否链接两个点</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/n-tiao-gei-ding-chang-du-de-bian-neng-fou-lian-jie-liang-ge-dian.html</link><description># [[ B - Line Segments](https://codeforces.com/contest/2119/problem/B)](https://codeforces.com/contest/2119/problem/B)
+
+# 关键：
+
+将问题转化为n + 1条边是否能组成多边形或退化多边形的问题（拿三角形分析最简单）
+
+并且并不需要拿出具体的方案，只需要判断存在性，这n+1条边中的最大值只要不大于其余所有边的和就一定能组成多边形或退化多边形。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/n-tiao-gei-ding-chang-du-de-bian-neng-fou-lian-jie-liang-ge-dian.html</guid><pubDate>Mon, 07 Jul 2025 09:17:09 +0000</pubDate></item><item><title>加1与异或1</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/jia-1-yu-yi-huo-1.html</link><description># [[ A - Add or XOR](https://codeforces.com/contest/2119/problem/A)](https://codeforces.com/contest/2119/problem/A)
 
 # 关键：
 
