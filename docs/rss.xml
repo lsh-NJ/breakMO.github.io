@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Tue, 08 Jul 2025 12:12:04 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>二重全排列左右子序列的按位异或相同子数组</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/er-zhong-quan-pai-lie-zuo-you-zi-xu-lie-de-an-wei-yi-huo-xiang-tong-zi-shu-zu.html</link><description># [[1944B - Equal XOR](https://codeforces.com/problemset/problem/1944/B)](https://codeforces.com/problemset/problem/1944/B)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Tue, 08 Jul 2025 12:23:05 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>任意数组对于何数的模只有两个结果？</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/ren-yi-shu-zu-dui-yu-he-shu-de-mo-zhi-you-liang-ge-jie-guo-%EF%BC%9F.html</link><description># [[1909B - Make Almost Equal With Mod](https://codeforces.com/problemset/problem/1909/B)](https://codeforces.com/problemset/problem/1909/B)
+
+### 关键知识：🔺
+
+- mod $2^{n}$运算相当于 `X &amp; (n - 1)`
+
+#### 思路：
+
+- 要得到两种不同的余数找到第一个不相同的二进制位置就可以了。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/ren-yi-shu-zu-dui-yu-he-shu-de-mo-zhi-you-liang-ge-jie-guo-%EF%BC%9F.html</guid><pubDate>Tue, 08 Jul 2025 12:22:36 +0000</pubDate></item><item><title>二重全排列左右子序列的按位异或相同子数组</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/er-zhong-quan-pai-lie-zuo-you-zi-xu-lie-de-an-wei-yi-huo-xiang-tong-zi-shu-zu.html</link><description># [[1944B - Equal XOR](https://codeforces.com/problemset/problem/1944/B)](https://codeforces.com/problemset/problem/1944/B)
 
 #### 思路:
 
