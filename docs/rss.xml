@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Tue, 08 Jul 2025 23:15:11 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>Mi,j = ai | aj，给定矩阵M，求数组a是否存在</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/Mi%2Cj%20%3D%20ai%20-%20aj%EF%BC%8C-gei-ding-ju-zhen-M%EF%BC%8C-qiu-shu-zu-a-shi-fou-cun-zai.html</link><description># [[1903B - StORage room](https://codeforces.com/problemset/problem/1903/B)](https://codeforces.com/problemset/problem/1903/B)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Wed, 09 Jul 2025 15:20:17 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>获得不等于原数组集合但最接近原集合的数组集合</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/huo-de-bu-deng-yu-yuan-shu-zu-ji-he-dan-zui-jie-jin-yuan-ji-he-de-shu-zu-ji-he.html</link><description># [[1882B - Sets and Union](https://codeforces.com/contest/1882/problem/B)](https://codeforces.com/contest/1882/problem/B)
+
+#### 原来的思路：
+
+- 删除特有元素最少的一个数组
+
+#### 正确的思路：
+
+- 尝试对每一个元素进行删除，检查删除以后剩余元素种类的最大值。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/huo-de-bu-deng-yu-yuan-shu-zu-ji-he-dan-zui-jie-jin-yuan-ji-he-de-shu-zu-ji-he.html</guid><pubDate>Wed, 09 Jul 2025 15:19:48 +0000</pubDate></item><item><title>Mi,j = ai | aj，给定矩阵M，求数组a是否存在</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/Mi%2Cj%20%3D%20ai%20-%20aj%EF%BC%8C-gei-ding-ju-zhen-M%EF%BC%8C-qiu-shu-zu-a-shi-fou-cun-zai.html</link><description># [[1903B - StORage room](https://codeforces.com/problemset/problem/1903/B)](https://codeforces.com/problemset/problem/1903/B)
 
 #### 思路:
 
