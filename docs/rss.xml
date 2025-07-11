@@ -1,5 +1,25 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 11 Jul 2025 03:52:57 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>鸽笼原理（Pigeonhole Principle）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/ge-long-yuan-li-%EF%BC%88Pigeonhole%20Principle%EF%BC%89.html</link><description>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 11 Jul 2025 04:02:15 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>模环境下的组合数/乘法逆元</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/mo-huan-jing-xia-de-zu-he-shu---cheng-fa-ni-yuan.html</link><description># 乘法逆元
+- ## 概念：
+
+  当存在整数a和mod且二者互质时，会有一个整数b满足`a * b ≡ 1 (mod mod)`，此时b就被称为a在模mod下的逆元，可以表示为`inv[a]`
+
+- ## 递推公式：
+
+  1. `inv[i] = (mod - mod/i) * inv[mod%i] % mod`，`b = inv[a]`，b就是a的倒数
+  2. 根据费马小定理使用快速幂求解：`b = fast_pow_mod((i + mod) % mod, mod - 2) % mod;`
+
+&gt; **对于mod的值：** mod必须是一个质数，不然有些数可能不存在逆元
+&gt;
+&gt; **对于递推公式1：** 要初始化`inv[1] = 1`
+# 模环境下的组合数
+- ## 基本算式：
+
+  1. 整体：$\frac{n！}{a！\cdot\left(n-a\right)!}$，可以写成$\frac{n\cdot\left(n-1\right)...\left(n-a+1\right)}{a\cdot\left(a-1\right)...2\cdot1}$，上下同是a项式
+
+- ## 一、费马小定理：
+
+   **`x^(mod-2) mod mod`** ：计算 `x` 在模 `mod` 下的逆元，即 `x^(mod-2) % mod`。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/mo-huan-jing-xia-de-zu-he-shu---cheng-fa-ni-yuan.html</guid><pubDate>Fri, 11 Jul 2025 04:01:48 +0000</pubDate></item><item><title>鸽笼原理（Pigeonhole Principle）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/ge-long-yuan-li-%EF%BC%88Pigeonhole%20Principle%EF%BC%89.html</link><description>
 鸽笼原理是组合数学中一个基础且应用广泛的原理，其核心思想简单直观，但能解决许多看似复杂的问题。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/ge-long-yuan-li-%EF%BC%88Pigeonhole%20Principle%EF%BC%89.html</guid><pubDate>Fri, 11 Jul 2025 03:52:31 +0000</pubDate></item><item><title>构造节点路径最小编号和确定的树</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/gou-zao-jie-dian-lu-jing-zui-xiao-bian-hao-he-que-ding-de-shu.html</link><description># [[ C - Divine Tree](https://codeforces.com/contest/2120/problem/C)](https://codeforces.com/contest/2120/problem/C)
 
 # 思路:
