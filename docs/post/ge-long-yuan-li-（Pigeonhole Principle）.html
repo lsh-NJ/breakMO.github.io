@@ -79,38 +79,27 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h4>一、基本概念</h4>
 <p>鸽笼原理的通俗表述为：</p>
 <ul>
-<li><strong>若有</strong> <strong>$ n $</strong> <strong>个鸽笼和</strong> <strong>$ n+1 $</strong> <strong>只鸽子，将所有鸽子放入鸽笼中，则至少有一个鸽笼里会有两只或更多的鸽子</strong>。</li>
+<li>
+<strong>若有</strong> <strong>$n$</strong> <strong>个鸽笼和</strong> <strong>$n+1$</strong> <strong>只鸽子，将所有鸽子放入鸽笼中，则至少有一个鸽笼里会有两只或更多的鸽子</strong>。</li>
 </ul>
 <p>更一般化的表述是：</p>
 <ul>
-<li>若有 $ n $ 个容器，将 $ k $ 个物体放入这些容器中，且 $ k &gt; n $，则至少有一个容器中包含至少 $ \lceil \frac{k}{n} \rceil $ 个物体（<strong>==其中==</strong>  <strong>==$ \lceil x \rceil $</strong>==  <strong>==表示向上取整==</strong>，即不小于 $ x $ 的最小整数）。</li>
+<li>若有 $n$ 个容器，将 $k$ 个物体放入这些容器中，且 $k &amp;gt; n$，则至少有一个容器中包含至少 $\lceil \frac{k}{n} \rceil$ 个物体（其中 ⌈x⌉﻿ 表示向上取整，即不小于 $x$ 的最小整数）。</li>
 </ul>
 <h4>二、常见形式</h4>
 <ol>
 <li>
 <strong>简单形式</strong><br>
-当 $ k = n + 1 $ 时，至少有一个容器包含 2 个或更多物体。<br>
+当 $k = n + 1$ 时，至少有一个容器包含 2 个或更多物体。<br>
 <em>例如：367人中至少有2人同一天生日（一年最多366天，视为“鸽笼”）。</em>
 </li>
 <li>
 <strong>加强形式</strong><br>
-若将 $ k_1 + k_2 + \dots + k_n - n + 1 $ 个物体放入 $ n $ 个容器中，则至少有一个容器 $ i $ 中包含至少 $ k_i $ 个物体。<br>
-当 $ k_1 = k_2 = \dots = k_n = m $ 时，可简化为：<br>
-若有 $ n(m - 1) + 1 $ 个物体，放入 $ n $ 个容器，则至少有一个容器含 $ m $ 个物体。<br>
-<em>例如：10只鸽子放入3个笼子，至少有一个笼子至少有4只鸽子（**$ \lceil 10/3 \rceil = 4 $</em> <em>）。</em>
-</li>
+若将 $k_1 + k_2 + \dots + k_n - n + 1$ 个物体放入 $n$ 个容器中，则至少有一个容器 $i$ 中包含至少 $k_i$ 个物体。<br>
+当 $k_1 = k_2 = \dots = k_n = m$ 时，可简化为：<br>
+若有 $n(m - 1) + 1$ 个物体，放入 $n$ 个容器，则至少有一个容器含 $m$ 个物体。</li>
 </ol>
-<h4>三、应用场景</h4>
-<p>鸽笼原理的应用遍布数学、计算机科学、生活等多个领域：</p>
-<ul>
-<li><strong>数学证明</strong>：证明存在性问题（如“任意5个整数中，必有3个的和能被3整除”）。</li>
-<li><strong>密码学</strong>：哈希函数中，由于可能的输入多于输出，必然存在哈希碰撞（不同输入对应同一输出）。</li>
-<li><strong>生活现象</strong>：13人中至少有2人属相相同（12个属相为“鸽笼”）；在任意6个人中，要么3人互相认识，要么3人互不认识（拉姆齐数问题的简化）。</li>
-</ul>
-<h4>四、经典例题</h4>
-<p><strong>问题</strong>：在边长为1的正方形内任意放置5个点，证明至少有两个点的距离不超过 $ \frac{\sqrt{2}}{2} $。<br>
-<strong>解答</strong>：将正方形等分为4个边长为0.5的小正方形（视为4个“鸽笼”），5个点放入4个小正方形中，至少有一个小正方形含2个点。小正方形内两点最大距离为对角线长度 $ \frac{\sqrt{2}}{2} $，故得证。</p>
-<h4>五、总结</h4>
+<h4>三、note</h4>
 <p>鸽笼原理的关键在于识别“鸽笼”（容器）和“鸽子”（物体），通过构造合适的分类方式，将问题转化为“物体数多于容器数”的场景，从而得出存在性结论。尽管原理简单，但其灵活性使其成为解决组合问题的有力工具。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
@@ -212,6 +201,6 @@ function iFrameLoading(){
 
 
 </script>
-
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </html>
