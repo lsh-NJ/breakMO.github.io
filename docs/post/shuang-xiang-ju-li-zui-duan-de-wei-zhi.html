@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://lsh-NJ.github.io/breakMO.github.io/post/shuang-xiang-ju-li-zui-duan-de-wei-zhi.html">
 <meta property="og:image" content="https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&rs=1&pid=ImgDetMain">
 <title>双向距离最短的位置</title>
-
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 
 </head>
@@ -133,27 +133,26 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </li>
 </ol>
 <h2>代码：</h2>
-<pre lang="cpp" class="notranslate"><code class="notranslate">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-void solution() {
-    int n, k; cin &gt;&gt; n &gt;&gt; k;
-    vector&lt;int&gt; a(n + 1);
-    for(int i = 1; i &lt;= n; i++) {
+<div class="highlight highlight-source-c++"><pre class="notranslate">#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>bits/stdc++.h<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span>
+<span class="pl-k">void</span> <span class="pl-en">solution</span>() {
+    <span class="pl-k">int</span> n, k; cin &gt;&gt; n &gt;&gt; k;
+    vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">a</span>(n + <span class="pl-c1">1</span>);
+    <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">1</span>; i &lt;= n; i++) {
         cin &gt;&gt; a[i];
     }
-    sort(a.begin() + 1, a.end());
-    int m = n - k;
-    if(m &amp; 1) {
-        cout &lt;&lt; a[(m + 1) / 2 + k] - a[(m + 1) / 2] + 1 &lt;&lt; endl;
-    } else cout &lt;&lt; a[m / 2 + k + 1] - a[m / 2] + 1 &lt;&lt; endl;
+    <span class="pl-c1">sort</span>(a.<span class="pl-c1">begin</span>() + <span class="pl-c1">1</span>, a.<span class="pl-c1">end</span>());
+    <span class="pl-k">int</span> m = n - k;
+    <span class="pl-k">if</span>(m &amp; <span class="pl-c1">1</span>) {
+        cout &lt;&lt; a[(m + <span class="pl-c1">1</span>) / <span class="pl-c1">2</span> + k] - a[(m + <span class="pl-c1">1</span>) / <span class="pl-c1">2</span>] + <span class="pl-c1">1</span> &lt;&lt; endl;
+    } <span class="pl-k">else</span> cout &lt;&lt; a[m / <span class="pl-c1">2</span> + k + <span class="pl-c1">1</span>] - a[m / <span class="pl-c1">2</span>] + <span class="pl-c1">1</span> &lt;&lt; endl;
 }
 
-int main() {
-    int t; cin &gt;&gt; t;
-    while(t--) solution();
-    return 0;
-}
-</code></pre></div>
+<span class="pl-k">int</span> <span class="pl-en">main</span>() {
+    <span class="pl-k">int</span> t; cin &gt;&gt; t;
+    <span class="pl-k">while</span>(t--) <span class="pl-c1">solution</span>();
+    <span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
