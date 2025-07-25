@@ -1,5 +1,50 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 25 Jul 2025 14:57:05 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>划分相同MEX子段</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/hua-fen-xiang-tong-MEX-zi-duan.html</link><description>[[B - Informatics in MAC](https://codeforces.com/contest/1935/problem/B)](https://codeforces.com/contest/1935/problem/B)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 25 Jul 2025 18:01:31 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>区间重叠状态数——区间动态统计</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/qu-jian-zhong-die-zhuang-tai-shu-%E2%80%94%E2%80%94-qu-jian-dong-tai-tong-ji.html</link><description>[[1007 性质不同的数字](https://acm.hdu.edu.cn/contest/problem?cid=1174&amp;pid=1007)](https://acm.hdu.edu.cn/contest/problem?cid=1174&amp;pid=1007)
+
+# 思路：
+
+- 使用栈来记录状态，栈的高度，以及有效值，栈顶元素标记了当前的状态，当状态发生变化就使答案增加
+- 区间为左开右闭，并且删除栈中元素是在经过r的时候进行的，所以map中插入的应该是r + 1
+
+```cpp
+void solution() {
+    int res = 1;
+    map&lt;int, vector&lt;int&gt;&gt; m;
+    int n; cin &gt;&gt; n;
+    vector&lt;int&gt; stk(n + 2, -1), hisc(n + 2, -1), pos(n + 2, -1);
+    stk[0] = hisc[0] = pos[0] = 0;
+    for(int i = 1; i &lt;= n; i++) {
+        int l, r; cin &gt;&gt; l &gt;&gt; r;
+        m[l].push_back(i);
+        // 保证区间为闭区间
+        m[r + 1].push_back(-i);
+    }
+    int h = 0, c = 0;
+    // 从最左端开始分析（map排序）
+    for(auto&amp; k:m) {
+        for(auto&amp; x:k.second) {
+            if(x &gt; 0) {
+                stk[++h] = x;
+                pos[x] = h;
+                c++;
+            }
+            else {
+                int p = pos[-x];
+                stk[p] = -1;
+                c--;
+            }
+        }
+        // 更新高度
+        while(stk[h] == -1) h--;
+        // 获取当前栈顶元素
+        int x = stk[h];
+        // 比较栈顶元素相同时的有效值
+        if(hisc[x] != c) res++;
+        hisc[x] = c;
+    }
+    cout &lt;&lt; res &lt;&lt; endl;
+}
+```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/qu-jian-zhong-die-zhuang-tai-shu-%E2%80%94%E2%80%94-qu-jian-dong-tai-tong-ji.html</guid><pubDate>Fri, 25 Jul 2025 18:00:59 +0000</pubDate></item><item><title>划分相同MEX子段</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/hua-fen-xiang-tong-MEX-zi-duan.html</link><description>[[B - Informatics in MAC](https://codeforces.com/contest/1935/problem/B)](https://codeforces.com/contest/1935/problem/B)
 
 # 思路：
 
