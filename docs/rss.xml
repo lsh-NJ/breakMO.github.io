@@ -1,5 +1,21 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Mon, 28 Jul 2025 11:48:16 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>给定相邻编号距离最大值的树的构造</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/gei-ding-xiang-lin-bian-hao-ju-li-zui-da-zhi-de-shu-de-gou-zao.html</link><description># 1009
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Mon, 28 Jul 2025 15:14:34 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>重排A数组使得A+B对应位置元素模m的和最大</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/zhong-pai-A-shu-zu-shi-de-A%2BB-dui-ying-wei-zhi-yuan-su-mo-m-de-he-zui-da.html</link><description>[[D - Match, Mod, Minimize 2](https://atcoder.jp/contests/abc416/tasks/abc416_d)](https://atcoder.jp/contests/abc416/tasks/abc416_d)
+
+# 思路：
+
+- 要求$\sum_{i=1}^{N}\left(\left(A_{i}+B_{i}\right)\bmod M\right)$，可以通过讨论转化问题：
+
+  1. $A_{i}+B_{i}&lt;M$:
+
+      $\sum_{i=1}^{N}\left(\left(A_{i}+B_{i}\right)\bmod M\right)=\sum_{i=1}^{N}\left(A _{i}+B_{i}\right)$
+  2. $A_{i}+B_{i}\ge M$:
+
+      令$\left(A_{i}+B_{i}\right)\bmod M=\left(A_{i}+B_{i}\right)-M$（题目限制$A_i$、$B_i$都小于M）
+  3. 综上:
+
+      $\sum_{i=1}^{N}\left(\left(A_{i}+B_{i}\right)\bmod M\right)=\sum_{i=1}^{N}\left(A _{i}+B_{i}\right)-CM$（C为第二类中AB和超过M的数量）
+
+      &gt; 将原方程的变量与不变量分离，将问题转化为寻找C的最大值。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/zhong-pai-A-shu-zu-shi-de-A%2BB-dui-ying-wei-zhi-yuan-su-mo-m-de-he-zui-da.html</guid><pubDate>Mon, 28 Jul 2025 15:13:59 +0000</pubDate></item><item><title>给定相邻编号距离最大值的树的构造</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/gei-ding-xiang-lin-bian-hao-ju-li-zui-da-zhi-de-shu-de-gou-zao.html</link><description># 1009
 
 [[1009 量子弹弓](https://acm.hdu.edu.cn/contest/problem?cid=1175&amp;pid=1009)](https://acm.hdu.edu.cn/contest/problem?cid=1175&amp;pid=1009)
 
