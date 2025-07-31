@@ -1,5 +1,32 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Tue, 29 Jul 2025 12:48:56 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>2025/7/29周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-7-29-zhou-ji.html</link><description>	不要忘了你的梦啊！！！
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Thu, 31 Jul 2025 07:25:48 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>动态维护并查询根节点的最大深度（带权并查集）</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/dong-tai-wei-hu-bing-cha-xun-gen-jie-dian-de-zui-da-shen-du-%EF%BC%88-dai-quan-bing-cha-ji-%EF%BC%89.html</link><description># A
+
+## 思路:
+
+- 使用带权并查集，维护两个“深度”数组，第一个是根节点的最大深度，第二个是当前节点的深度
+- 在加入边的过程中将被指向节点深度标记为一，之后在并查集find（主要作用是找到根节点并对根节点的深度进行维护）路径压缩的过程中将deep进行统计，子节点加上父节点的deep
+- 在维护根节点深度的最大值时由于子节点的deep还未完全统计，因此需要父节点（未连接时的叶子节点）加上子节点（未连接时的根节点）再加上新的边来维护
+
+```cpp
+vector&lt;int&gt; res, deep, parent;
+// 在寻找根节点并进行路径压缩的过程中同步深度
+int find(int x) {
+    if(parent[x] != x) {
+        int t = parent[x];
+        deep[x] += deep[t];
+        parent[x] = find(parent[x]);
+    }
+    return parent[x];
+}
+
+// 进行合并
+void merge(int s, int e) {
+    parent[e] = s;
+    deep[e] = 1;
+    int t = find(s);
+    res[t] = max(res[t], res[e] + deep[s] + 1);
+}
+```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/dong-tai-wei-hu-bing-cha-xun-gen-jie-dian-de-zui-da-shen-du-%EF%BC%88-dai-quan-bing-cha-ji-%EF%BC%89.html</guid><pubDate>Thu, 31 Jul 2025 07:25:17 +0000</pubDate></item><item><title>2025/7/29周记</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/2025-7-29-zhou-ji.html</link><description>	不要忘了你的梦啊！！！
 
 	难道还需要多说什么豪言壮志吗?
 
