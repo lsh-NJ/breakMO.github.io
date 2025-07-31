@@ -1,5 +1,40 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Thu, 31 Jul 2025 13:07:26 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>最小顶点覆盖问题</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/zui-xiao-ding-dian-fu-gai-wen-ti.html</link><description># B
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Thu, 31 Jul 2025 13:33:39 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>满足区间以及字典序要求的括号字符串</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/man-zu-qu-jian-yi-ji-zi-dian-xu-yao-qiu-de-kuo-hao-zi-fu-chuan.html</link><description># L
+
+[[Minimum Parenthesis String](https://ac.nowcoder.com/acm/contest/108303/L)](https://ac.nowcoder.com/acm/contest/108303/L)
+
+# 思路：
+
+- 先通过排序`vector&lt;pair&lt;int, int&gt;&gt;`来处理区间，满足所有区间的要求，再顾及字典序问题从头开始防止左括号
+
+  ```cpp
+      int num = 0;
+      int pre = INT_MAX;
+      for(int i = m - 1; i &gt;= 0; i--) {
+          if(sp[i].second &gt;= pre) continue;
+          else {
+              pre = sp[i].first;
+              res[sp[i].first] = '(';
+              num++;
+          }
+      }
+  ```
+
+# 问题：
+
+- 因为是分配左括号，所以任意位置要满足右括号大于左括号
+
+  ```cpp
+  	int r = 0, l = 0;
+      for(int i = 2 * n - 1; i &gt;= 0; i--) {
+          if(res[i] == ')') r++;
+          else l++;
+          if(r &lt; l) {
+              cout &lt;&lt; - 1 &lt;&lt; endl;
+              return;
+          }
+      }
+  ```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/man-zu-qu-jian-yi-ji-zi-dian-xu-yao-qiu-de-kuo-hao-zi-fu-chuan.html</guid><pubDate>Thu, 31 Jul 2025 13:33:10 +0000</pubDate></item><item><title>最小顶点覆盖问题</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/zui-xiao-ding-dian-fu-gai-wen-ti.html</link><description># B
 
 # 思路：
 
