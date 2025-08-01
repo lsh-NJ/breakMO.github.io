@@ -1,5 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 01 Aug 2025 14:33:55 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>c++大数据进制转换</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/c%2B%2B-da-shu-ju-jin-zhi-zhuan-huan.html</link><description>## 步骤:
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 01 Aug 2025 14:35:10 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>线性筛法（欧拉筛）及质因数个数的快速统计</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/xian-xing-shai-fa-%EF%BC%88-ou-la-shai-%EF%BC%89-ji-zhi-yin-shu-ge-shu-de-kuai-su-tong-ji.html</link><description>```cpp
+void init() {
+    rep(i, 2, N - 1) {  // 遍历 2 到 N-1 的所有数
+        if (!num[i]) {  // 若 num[i] 为 0，说明 i 是质数（未被标记过）
+            prime[++prime[0]] = i;  // 将 i 加入质数数组，同时更新质数数量
+            num[i] = 1;  // 质数的质因数只有自身，因此个数为 1
+        }
+        // 用已找到的质数筛选合数，并计算其质因数个数
+        for (int j = 1; j &lt;= prime[0] &amp;&amp; prime[j] * i &lt; N; j++) {
+            num[prime[j] * i] = num[i] + 1;  // 合数的质因数个数 = i 的质因数个数 + 1（新增 prime[j] 这个质因数）
+            if (i % prime[j] == 0) break;  // 保证每个合数只被最小质因数筛选一次（线性筛的关键）
+        }
+    }
+}
+```。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/xian-xing-shai-fa-%EF%BC%88-ou-la-shai-%EF%BC%89-ji-zhi-yin-shu-ge-shu-de-kuai-su-tong-ji.html</guid><pubDate>Fri, 01 Aug 2025 14:34:42 +0000</pubDate></item><item><title>c++大数据进制转换</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/c%2B%2B-da-shu-ju-jin-zhi-zhuan-huan.html</link><description>## 步骤:
 
 1. 将给定的k进制字符串转换为10进制字符串
 
