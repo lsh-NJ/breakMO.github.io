@@ -1,5 +1,15 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 01 Aug 2025 14:35:10 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>线性筛法（欧拉筛）及质因数个数的快速统计</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/xian-xing-shai-fa-%EF%BC%88-ou-la-shai-%EF%BC%89-ji-zhi-yin-shu-ge-shu-de-kuai-su-tong-ji.html</link><description>```cpp
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 01 Aug 2025 14:37:16 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>hdu多校5L计算min{||ap-aq|-|bp-bq||}</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/hdu-duo-xiao-5L-ji-suan-min%7B--ap-aq---bp-bq--%7D.html</link><description># L 最小值
+
+- ## 思路：
+
+  - 化简式子发现：
+
+    1. 当$\left(a_{p}-a_{q}\right)\left(b_{p}-b_{q}\right)\ge0$时，原式等于$\left\vert\left(a_{p}-a_{q}\right)-\left(b_{p}-b_{q}\right)\right\vert$
+    2. 反之，原式等于$\left\vert\left(a_{p}+a_{q}\right)-\left(b_{p}+b_{q}\right)\right\vert$
+  - 为什么我们只需对原式的转换进行讨论就可以了?
+
+    经过检查发现，当$\left(a_{p}-a_{q}\right)\left(b_{p}-b_{q}\right)\ge0$时，$\left\vert\left(a_{p}-a_{q}\right)-\left(b_{p}-bq\right)\right\vert$$&lt;$$\left\vert\left(a_{p}+a_{q}\right)-\left(b_{p}+b_{q}\right)\right\vert$，也就是说当我们检查两种情况的最小值时，不合理的可能性恰好不可能是答案。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/hdu-duo-xiao-5L-ji-suan-min%7B--ap-aq---bp-bq--%7D.html</guid><pubDate>Fri, 01 Aug 2025 14:36:52 +0000</pubDate></item><item><title>线性筛法（欧拉筛）及质因数个数的快速统计</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/xian-xing-shai-fa-%EF%BC%88-ou-la-shai-%EF%BC%89-ji-zhi-yin-shu-ge-shu-de-kuai-su-tong-ji.html</link><description>```cpp
 void init() {
     rep(i, 2, N - 1) {  // 遍历 2 到 N-1 的所有数
         if (!num[i]) {  // 若 num[i] 为 0，说明 i 是质数（未被标记过）
