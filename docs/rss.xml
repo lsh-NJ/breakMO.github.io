@@ -1,5 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Sat, 02 Aug 2025 03:32:48 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>是否可以构造总和相等但每个元素都不同的数组</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/shi-fou-ke-yi-gou-zao-zong-he-xiang-deng-dan-mei-ge-yuan-su-du-bu-tong-de-shu-zu.html</link><description>[[1923C - Find B](https://codeforces.com/problemset/problem/1923/C)](https://codeforces.com/problemset/problem/1923/C)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Sat, 02 Aug 2025 03:33:40 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>重现分配区间最小权值</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/zhong-xian-fen-pei-qu-jian-zui-xiao-quan-zhi.html</link><description>[[1909C - Heavy Intervals](https://codeforces.com/problemset/problem/1909/C)](https://codeforces.com/problemset/problem/1909/C)
+
+#构造# #贪心# #数据结构#
+
+## 思路：
+
+- 经过一番思考发现“区间长度总和”是不变的，但通过一定的操作使得大权值对应更小的区间（让小区间尽量小）可以减小总和
+- 对于所有的l和r，找到最接近的l和r实现小区间尽量小的方法是当作左右括号，即是每个r对应最近的l就可以了。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/zhong-xian-fen-pei-qu-jian-zui-xiao-quan-zhi.html</guid><pubDate>Sat, 02 Aug 2025 03:33:12 +0000</pubDate></item><item><title>是否可以构造总和相等但每个元素都不同的数组</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/shi-fou-ke-yi-gou-zao-zong-he-xiang-deng-dan-mei-ge-yuan-su-du-bu-tong-de-shu-zu.html</link><description>[[1923C - Find B](https://codeforces.com/problemset/problem/1923/C)](https://codeforces.com/problemset/problem/1923/C)
 
 #贪心# #构造#
 
