@@ -1,5 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Fri, 01 Aug 2025 14:37:16 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>hdu多校5L计算min{||ap-aq|-|bp-bq||}</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/hdu-duo-xiao-5L-ji-suan-min%7B--ap-aq---bp-bq--%7D.html</link><description># L 最小值
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Sat, 02 Aug 2025 03:32:48 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>是否可以构造总和相等但每个元素都不同的数组</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/shi-fou-ke-yi-gou-zao-zong-he-xiang-deng-dan-mei-ge-yuan-su-du-bu-tong-de-shu-zu.html</link><description>[[1923C - Find B](https://codeforces.com/problemset/problem/1923/C)](https://codeforces.com/problemset/problem/1923/C)
+
+#贪心# #构造#
+
+## 思路：
+
+- 要找到查询区间数组是否存在值相同但任意相应位置值都不同的构造，只要不同就可以了，总和相同总是可以轻松实现的，比如所有的数加一减一。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/shi-fou-ke-yi-gou-zao-zong-he-xiang-deng-dan-mei-ge-yuan-su-du-bu-tong-de-shu-zu.html</guid><pubDate>Sat, 02 Aug 2025 03:32:23 +0000</pubDate></item><item><title>hdu多校5L计算min{||ap-aq|-|bp-bq||}</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/hdu-duo-xiao-5L-ji-suan-min%7B--ap-aq---bp-bq--%7D.html</link><description># L 最小值
 
 - ## 思路：
 
