@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Wed, 06 Aug 2025 02:53:10 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>gcd(a^b, c^d)</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/gcd%28a%5Eb%2C%20c%5Ed%29.html</link><description>## 思路：
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Wed, 06 Aug 2025 14:11:13 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>条件构造数组组成数剔除m位数的最大值</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/tiao-jian-gou-zao-shu-zu-zu-cheng-shu-ti-chu-m-wei-shu-de-zui-da-zhi.html</link><description>[[当我在构造的时候我会想什么](http://10.160.111.129/p/2684?tid=68920b24c9d615d80a10e864)](http://10.160.111.129/p/2684?tid=68920b24c9d615d80a10e864)
+
+# 问题：
+
+1. 使用优先队列的时间复杂度~~O(n)~~ 如何？
+
+    优先队列的复杂度并非O(n),得到的数可以直接转字符串进行拼接
+2. **如何高效在已知数组中查找一定位数的最大值**
+
+    - 遵循高位数字越大越好的原理，可以通过大顶堆来实现。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/tiao-jian-gou-zao-shu-zu-zu-cheng-shu-ti-chu-m-wei-shu-de-zui-da-zhi.html</guid><pubDate>Wed, 06 Aug 2025 14:10:41 +0000</pubDate></item><item><title>gcd(a^b, c^d)</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/gcd%28a%5Eb%2C%20c%5Ed%29.html</link><description>## 思路：
 
 - 数学推导：$\operatorname{\mathrm{gcd}}\left(a^{b},c^{d}\right)=\operatorname{\mathrm{gcd}}\left (x^{b}\operatorname{\mathrm{gcd}}\left(a,c\right)^{b},y^{d}\operatorname{\mathrm{gcd}} \left(a,c\right)^{d}\right)=\operatorname{\mathrm{gcd}}\left(a,c\right)\cdot\operatorname{\mathrm{gcd}} \left(x^{b},y^{d}\operatorname{\mathrm{gcd}}\left(a,c\right)^{b-d}\right)$
 
