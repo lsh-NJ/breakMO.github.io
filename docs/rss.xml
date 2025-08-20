@@ -1,5 +1,30 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Mon, 18 Aug 2025 06:55:43 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>无重叠的区间完全覆盖概率</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/wu-zhong-die-de-qu-jian-wan-quan-fu-gai-gai-lv.html</link><description>[[D - Segments Covering](https://codeforces.com/contest/2125/problem/D)](https://codeforces.com/contest/2125/problem/D)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Break_M</title><link>https://lsh-NJ.github.io/breakMO.github.io</link><description>你想度过，怎么样的一生？</description><copyright>Break_M</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://tse4.mm.bing.net/th/id/OIP.lKmqCoEUSaq-GtTpYi8s3wHaEd?cb=iwp1&amp;rs=1&amp;pid=ImgDetMain</url><title>avatar</title><link>https://lsh-NJ.github.io/breakMO.github.io</link></image><lastBuildDate>Wed, 20 Aug 2025 15:21:16 +0000</lastBuildDate><managingEditor>Break_M</managingEditor><ttl>60</ttl><webMaster>Break_M</webMaster><item><title>欧拉函数</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/ou-la-han-shu.html</link><description>## 定义：
+
+- $\varphi\left(n\right)$，表示小于等于$n$的和$n$互质的数的个数
+
+## 性质：
+
+1. #### 积性函数
+
+    对任意满足$\operatorname{\mathrm{gcd}}\left(a,b\right)=1$的整数$a,b$，有$\varphi\left(a,b\right)=\varphi\left(a\right)\cdot\varphi\left(b\right)$
+
+    特别的，当$n$是奇数时$\varphi\left(2n\right)=\varphi\left(n\right)$
+
+2. **$n=\sum_{\frac{d}{n}}^{\placeholder{}}\varphi\left(d\right)$** **，****$n$****的所有正约数的欧拉函数之和等于n本身**
+
+    &gt; 如$n=6$，$d=1,2,3,6$
+    &gt;
+    &gt; $ \varphi(1) = 1 $，$ \varphi(2) = 1 $，$ \varphi(3) = 2 $ ，$ \varphi(6) = 2 $ 和为 $6$
+    &gt;
+3. **$n$****为质数，欧拉函数值为****$n-1$**
+4. 若$n=p^{k}$，且$p$为质数，那么$\varphi\left(n\right)=p^{k}-p^{k-1}$
+
+    **推论：**$\varphi\left(p^{k}\right)=p^{k}-p^{k-1}=p\cdot\left(p^{k-1}-p^{k-2}\right)=p\cdot \varphi\left(p^{k-1}\right)$
+5. #### 唯一分解定理：
+
+    设$n=\prod_{i=1}^{s}p_{i}^{k_{i}}$，其中$p_{i}$是质数，有$\varphi\left(n\right)=n\cdot\prod_{i=1}^{s}\frac{p_{i}-1}{p_{i}}$
+6. 对于任意不全为0的整数$n,m$，$\varphi\left(nm\right)\cdot\varphi\left(\operatorname{\mathrm{gcd}}\left(n,m\right )\right)=\varphi\left(n\right)\cdot\varphi\left(m\right)\operatorname{\cdot\mathrm{gcd}} \left(n,m\right)$。</description><guid isPermaLink="true">https://lsh-NJ.github.io/breakMO.github.io/post/ou-la-han-shu.html</guid><pubDate>Wed, 20 Aug 2025 15:20:49 +0000</pubDate></item><item><title>无重叠的区间完全覆盖概率</title><link>https://lsh-NJ.github.io/breakMO.github.io/post/wu-zhong-die-de-qu-jian-wan-quan-fu-gai-gai-lv.html</link><description>[[D - Segments Covering](https://codeforces.com/contest/2125/problem/D)](https://codeforces.com/contest/2125/problem/D)
 
 ## 思路：
 
