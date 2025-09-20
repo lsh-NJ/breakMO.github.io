@@ -160,11 +160,11 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <li>
 <p>先通过排序<code class="notranslate">vector&lt;pair&lt;int, int&gt;&gt;</code>来处理区间，满足所有区间的要求，再顾及字典序问题从头开始防止左括号</p>
 <div class="highlight highlight-source-c++"><pre class="notranslate">    <span class="pl-k">int</span> num = <span class="pl-c1">0</span>;
-    <span class="pl-k">int</span> pre = INT_MAX;
+    <span class="pl-k">int</span> <span class="pl-k">pre</span> = INT_MAX;
     <span class="pl-k">for</span>(<span class="pl-k">int</span> i = m - <span class="pl-c1">1</span>; i &gt;= <span class="pl-c1">0</span>; i--) {
-        <span class="pl-k">if</span>(sp[i].<span class="pl-smi">second</span> &gt;= pre) <span class="pl-k">continue</span>;
+        <span class="pl-k">if</span>(sp[i].<span class="pl-smi">second</span> &gt;= <span class="pl-k">pre</span>) <span class="pl-k">continue</span>;
         <span class="pl-k">else</span> {
-            pre = sp[i].<span class="pl-smi">first</span>;
+            <span class="pl-k">pre</span> = sp[i].<span class="pl-smi">first</span>;
             res[sp[i].<span class="pl-smi">first</span>] = <span class="pl-s"><span class="pl-pds">'</span>(<span class="pl-pds">'</span></span>;
             num++;
         }

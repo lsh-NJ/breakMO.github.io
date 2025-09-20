@@ -144,20 +144,20 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">a</span>(n + <span class="pl-c1">1</span>);
     <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">1</span>; i &lt;= n; i++) cin &gt;&gt; a[i];
     unordered_map&lt;<span class="pl-k">int</span>, <span class="pl-k">int</span>&gt; prev, now;<span class="pl-c"><span class="pl-c">//</span>分别记录前一段的元素种类和后一段的元素种类及其具体元素</span>
-    <span class="pl-k">int</span> pre = <span class="pl-c1">0</span>, flag = <span class="pl-c1">0</span>;<span class="pl-c"><span class="pl-c">//</span>用于记录后一段是否包含前一段的所有元素</span>
+    <span class="pl-k">int</span> <span class="pl-k">pre</span> = <span class="pl-c1">0</span>, flag = <span class="pl-c1">0</span>;<span class="pl-c"><span class="pl-c">//</span>用于记录后一段是否包含前一段的所有元素</span>
     <span class="pl-k">int</span> res = <span class="pl-c1">0</span>;
     <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">1</span>; i &lt;= n; i++) {
         <span class="pl-c"><span class="pl-c">//</span>prev有但now中没有就说明找到了一个后一段包含前一段的元素</span>
         <span class="pl-k">if</span>(prev[a[i]] &amp;&amp; !now[a[i]]) flag++;
         now[a[i]] = <span class="pl-c1">1</span>;
-        <span class="pl-k">if</span>(flag == pre) {
+        <span class="pl-k">if</span>(flag == <span class="pl-k">pre</span>) {
             res++;
             <span class="pl-c"><span class="pl-c">//</span>进入新层，prev已经没用了</span>
             prev.<span class="pl-c1">clear</span>();
             <span class="pl-k">for</span>(<span class="pl-k">auto</span> &amp;pair:now) {
                 prev.<span class="pl-c1">insert</span>(pair);
             }
-            pre = prev.<span class="pl-c1">size</span>();
+            <span class="pl-k">pre</span> = prev.<span class="pl-c1">size</span>();
             flag = <span class="pl-c1">0</span>;
             now.<span class="pl-c1">clear</span>();
         }
