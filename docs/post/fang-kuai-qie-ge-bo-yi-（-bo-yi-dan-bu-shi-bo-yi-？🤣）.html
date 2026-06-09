@@ -127,7 +127,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-k">void</span> <span class="pl-en">solution</span>() {
     <span class="pl-k">int</span> n, m, x, y;
     cin &gt;&gt; n &gt;&gt; m &gt;&gt; x &gt;&gt; y;
-    <span class="pl-k">int</span> count = INT_MAX;
+    <span class="pl-k">int</span> count = <span class="pl-c1">INT_MAX</span>;
     vector&lt;vector&lt;<span class="pl-k">int</span>&gt;&gt; rec = {{x, m}, {n, y}, {n - x + <span class="pl-c1">1</span>, m}, {n, m - y + <span class="pl-c1">1</span>}};
     <span class="pl-k">for</span>(vector&lt;<span class="pl-k">int</span>&gt; tmp : rec) {
         <span class="pl-k">int</span> l = tmp[<span class="pl-c1">0</span>];

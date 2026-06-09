@@ -212,7 +212,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         grid.<span class="pl-c1">push_back</span>({s, e, val});
     }
 
-    vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">minDist</span>(n + <span class="pl-c1">1</span>, INT_MAX);
+    vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">minDist</span>(n + <span class="pl-c1">1</span>, <span class="pl-c1">INT_MAX</span>);
     minDist[<span class="pl-c1">1</span>] = <span class="pl-c1">0</span>;
     <span class="pl-k">bool</span> flag = <span class="pl-c1">false</span>;<span class="pl-c"><span class="pl-c">//</span>记录是否存在负权回路</span>
     <span class="pl-c"><span class="pl-c">//</span>n - 1次松弛</span>
@@ -223,11 +223,11 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
             <span class="pl-k">int</span> to = grid[j][<span class="pl-c1">1</span>];
             <span class="pl-k">int</span> val = grid[j][<span class="pl-c1">2</span>];
             <span class="pl-k">if</span>(i &lt; n - <span class="pl-c1">1</span>) {
-                <span class="pl-k">if</span>(minDist[start] != INT_MAX &amp;&amp; minDist[start] + val &lt; minDist[to]) {
+                <span class="pl-k">if</span>(minDist[start] != <span class="pl-c1">INT_MAX</span> &amp;&amp; minDist[start] + val &lt; minDist[to]) {
                     minDist[to] = minDist[start] + val;
                 }
             } <span class="pl-k">else</span> {
-                <span class="pl-k">if</span>(minDist[start] != INT_MAX &amp;&amp; minDist[start] + val &lt; minDist[to]) {
+                <span class="pl-k">if</span>(minDist[start] != <span class="pl-c1">INT_MAX</span> &amp;&amp; minDist[start] + val &lt; minDist[to]) {
                     flag = <span class="pl-c1">true</span>;
                 }
             }
@@ -235,7 +235,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     }
     <span class="pl-k">if</span>(flag) cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>circle<span class="pl-pds">"</span></span> &lt;&lt; endl;
     <span class="pl-k">else</span>
-        minDist[n] == INT_MAX? cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>unconnected<span class="pl-pds">"</span></span> &lt;&lt; endl: cout &lt;&lt; minDist[n] &lt;&lt; endl;
+        minDist[n] == <span class="pl-c1">INT_MAX</span>? cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>unconnected<span class="pl-pds">"</span></span> &lt;&lt; endl: cout &lt;&lt; minDist[n] &lt;&lt; endl;
 
     <span class="pl-k">return</span> <span class="pl-c1">0</span>;
 }</pre></div></div>

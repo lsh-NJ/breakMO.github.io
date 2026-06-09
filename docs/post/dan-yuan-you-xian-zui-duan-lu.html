@@ -122,7 +122,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     }
     cin &gt;&gt; str &gt;&gt; end &gt;&gt; k;
 
-    vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">minDist</span>(n + <span class="pl-c1">1</span>, INT_MAX);
+    vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">minDist</span>(n + <span class="pl-c1">1</span>, <span class="pl-c1">INT_MAX</span>);
     vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">preMinDist</span>(n + <span class="pl-c1">1</span>);<span class="pl-c"><span class="pl-c">//</span>记录上一个minDist</span>
     minDist[str] = <span class="pl-c1">0</span>;
     preMinDist[str] = <span class="pl-c1">0</span>;
@@ -133,13 +133,13 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
             <span class="pl-k">int</span> start = grid[j][<span class="pl-c1">0</span>];
             <span class="pl-k">int</span> to = grid[j][<span class="pl-c1">1</span>];
             <span class="pl-k">int</span> val = grid[j][<span class="pl-c1">2</span>];
-            <span class="pl-k">if</span>(preMinDist[start] != INT_MAX &amp;&amp; preMinDist[start] + val &lt; minDist[to]) {
+            <span class="pl-k">if</span>(preMinDist[start] != <span class="pl-c1">INT_MAX</span> &amp;&amp; preMinDist[start] + val &lt; minDist[to]) {
                 minDist[to] = preMinDist[start] + val;
             }
         }
     }
 
-    minDist[end] == INT_MAX? cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>unconnected<span class="pl-pds">"</span></span> &lt;&lt; endl: cout &lt;&lt; minDist[end] &lt;&lt; endl;
+    minDist[end] == <span class="pl-c1">INT_MAX</span>? cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>unconnected<span class="pl-pds">"</span></span> &lt;&lt; endl: cout &lt;&lt; minDist[end] &lt;&lt; endl;
 
     <span class="pl-k">return</span> <span class="pl-c1">0</span>;
 }</pre></div>
@@ -160,7 +160,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     cin &gt;&gt; src &gt;&gt; end &gt;&gt; k;
     k++;
 
-    vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">minDist</span>(n + <span class="pl-c1">1</span>, INT_MAX);
+    vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">minDist</span>(n + <span class="pl-c1">1</span>, <span class="pl-c1">INT_MAX</span>);
     vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">preMinDist</span>(n + <span class="pl-c1">1</span>);
     minDist[<span class="pl-c1">1</span>] = <span class="pl-c1">0</span>;
     queue&lt;<span class="pl-k">int</span>&gt; q;
@@ -185,7 +185,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         }
     }
 
-    minDist[n] == INT_MAX? cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>unconnected<span class="pl-pds">"</span></span> &lt;&lt; endl: cout &lt;&lt; minDist[n] &lt;&lt; endl;
+    minDist[n] == <span class="pl-c1">INT_MAX</span>? cout &lt;&lt; <span class="pl-s"><span class="pl-pds">"</span>unconnected<span class="pl-pds">"</span></span> &lt;&lt; endl: cout &lt;&lt; minDist[n] &lt;&lt; endl;
     <span class="pl-k">return</span> <span class="pl-c1">0</span>;
 }</pre></div>
 </li>

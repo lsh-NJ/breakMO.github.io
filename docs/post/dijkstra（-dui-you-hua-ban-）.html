@@ -187,7 +187,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     priority_queue&lt;pair&lt;<span class="pl-k">int</span>, <span class="pl-k">int</span>&gt;, vector&lt;pair&lt;<span class="pl-k">int</span>, <span class="pl-k">int</span>&gt;&gt;, mycomparison&gt; pq;
     <span class="pl-k">int</span> start = <span class="pl-c1">1</span>;
     <span class="pl-k">int</span> end = n;
-    vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">miniDist</span>(n + <span class="pl-c1">1</span>, INT_MAX);
+    vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">miniDist</span>(n + <span class="pl-c1">1</span>, <span class="pl-c1">INT_MAX</span>);
     vector&lt;<span class="pl-k">bool</span>&gt; <span class="pl-c1">visited</span>(n + <span class="pl-c1">1</span>, <span class="pl-c1">false</span>);
 
     <span class="pl-c"><span class="pl-c">//</span>处理初始位置</span>
@@ -208,7 +208,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
             }
         }
     }
-    <span class="pl-k">if</span>(miniDist[end] == INT_MAX) cout &lt;&lt; -<span class="pl-c1">1</span> &lt;&lt; endl;
+    <span class="pl-k">if</span>(miniDist[end] == <span class="pl-c1">INT_MAX</span>) cout &lt;&lt; -<span class="pl-c1">1</span> &lt;&lt; endl;
     <span class="pl-k">else</span> cout &lt;&lt; miniDist[end] &lt;&lt; endl;
     <span class="pl-k">return</span> <span class="pl-c1">0</span>;
 }</pre></div></div>

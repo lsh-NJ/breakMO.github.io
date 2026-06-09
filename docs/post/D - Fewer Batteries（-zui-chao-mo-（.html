@@ -100,7 +100,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span>
 
-<span class="pl-k">const</span> <span class="pl-k">int</span> INF = <span class="pl-c1">1e9</span> + <span class="pl-c1">11</span>;<span class="pl-c"><span class="pl-c">//</span>某条边的最大值（答案的最大值）都不可能超过这个数</span>
+<span class="pl-k">const</span> <span class="pl-k">int</span> <span class="pl-c1">INF</span> = <span class="pl-c1">1e9</span> + <span class="pl-c1">11</span>;<span class="pl-c"><span class="pl-c">//</span>某条边的最大值（答案的最大值）都不可能超过这个数</span>
 
 <span class="pl-k">struct</span> <span class="pl-en">edge</span> {
     <span class="pl-k">int</span> t, w;
@@ -141,12 +141,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         <span class="pl-k">return</span> (best.<span class="pl-c1">back</span>() &gt; <span class="pl-c1">0</span>);
     };
 
-    <span class="pl-k">if</span> (!<span class="pl-c1">check</span>(INF)) {
+    <span class="pl-k">if</span> (!<span class="pl-c1">check</span>(<span class="pl-c1">INF</span>)) {
         cout &lt;&lt; -<span class="pl-c1">1</span> &lt;&lt; endl;
         <span class="pl-k">return</span>;
     }
     <span class="pl-c"><span class="pl-c">//</span>通过二分来逼近上限</span>
-    <span class="pl-k">int</span> l = <span class="pl-c1">0</span>, r = INF;
+    <span class="pl-k">int</span> l = <span class="pl-c1">0</span>, r = <span class="pl-c1">INF</span>;
     <span class="pl-k">while</span> (r - l &gt; <span class="pl-c1">1</span>) {
         <span class="pl-k">int</span> mid = (l + r) / <span class="pl-c1">2</span>;
         <span class="pl-k">if</span> (<span class="pl-c1">check</span>(mid)) {

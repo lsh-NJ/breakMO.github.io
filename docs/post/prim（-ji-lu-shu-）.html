@@ -227,7 +227,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <span class="pl-k">int</span> <span class="pl-en">main</span>() {
     <span class="pl-k">int</span> n, m, s, e, val;
     cin &gt;&gt; n &gt;&gt; m;
-    vector&lt;vector&lt;<span class="pl-k">int</span>&gt;&gt; <span class="pl-c1">graph</span>(n + <span class="pl-c1">1</span>, vector&lt;<span class="pl-k">int</span>&gt;(n + <span class="pl-c1">1</span>, INT_MAX));
+    vector&lt;vector&lt;<span class="pl-k">int</span>&gt;&gt; <span class="pl-c1">graph</span>(n + <span class="pl-c1">1</span>, vector&lt;<span class="pl-k">int</span>&gt;(n + <span class="pl-c1">1</span>, <span class="pl-c1">INT_MAX</span>));
     <span class="pl-c"><span class="pl-c">//</span>记录树+</span>
     vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">parent</span>(n + <span class="pl-c1">1</span>, -<span class="pl-c1">1</span>);
     <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; m; i++) {
@@ -237,7 +237,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     }
 
     vector&lt;<span class="pl-k">bool</span>&gt; <span class="pl-c1">visted</span>(n + <span class="pl-c1">1</span>, <span class="pl-c1">false</span>);
-    vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">miniDist</span>(n + <span class="pl-c1">1</span>, INT_MAX);
+    vector&lt;<span class="pl-k">int</span>&gt; <span class="pl-c1">miniDist</span>(n + <span class="pl-c1">1</span>, <span class="pl-c1">INT_MAX</span>);
     miniDist[<span class="pl-c1">1</span>] = <span class="pl-c1">0</span>;
 
     <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">0</span>; i &lt; n; i++) {

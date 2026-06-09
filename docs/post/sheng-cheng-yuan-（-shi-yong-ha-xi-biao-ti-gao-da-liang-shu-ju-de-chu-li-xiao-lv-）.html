@@ -100,12 +100,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 <h3>代码：——枚举列表过程</h3>
 <div class="highlight highlight-source-c++"><pre class="notranslate">#inlcude &lt;bits/stdc++.h&gt;
 <span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span>
-<span class="pl-k">const</span> <span class="pl-k">int</span> MAXN <span class="pl-c1">100005</span>
+<span class="pl-k">const</span> <span class="pl-k">int</span> <span class="pl-c1">MAXN</span> <span class="pl-c1">100005</span>
 vector&lt;<span class="pl-k">int</span>&gt; ans;
 
 <span class="pl-k">int</span> <span class="pl-en">main</span>() {
-    ans.<span class="pl-c1">resize</span>(MAXN, <span class="pl-c1">0</span>);
-    <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">1</span>; i &lt; MAXN; i++) {
+    ans.<span class="pl-c1">resize</span>(<span class="pl-c1">MAXN</span>, <span class="pl-c1">0</span>);
+    <span class="pl-k">for</span>(<span class="pl-k">int</span> i = <span class="pl-c1">1</span>; i &lt; <span class="pl-c1">MAXN</span>; i++) {
         <span class="pl-k">int</span> tmp = i, sum = i;
         <span class="pl-c"><span class="pl-c">//</span>获得每一位</span>
         <span class="pl-k">while</span>(i &gt; <span class="pl-c1">0</span>) {
